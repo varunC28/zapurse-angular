@@ -1,0 +1,160 @@
+<app-legal-layout title="Refund & Cancellation Policy" lastUpdated="January 20, 2026">
+    <div class="space-y-12 animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-both">
+        <!-- Intro -->
+        <section>
+            <p class="leading-relaxed">
+                Thank you for choosing Zapurse. This Refund & Cancellation Policy outlines
+                the terms and conditions governing cancellations and refunds on our platform.
+            </p>
+        </section>
+
+        <div class="grid gap-10">
+            <!-- Section 1 -->
+            <section
+                class="p-8 rounded-[2rem] bg-white/30 dark:bg-gray-900 shadow-lg border border-gray-100 dark:border-gray-800 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-red-500/5 rounded-full blur-3xl"></div>
+                <h4>1. No Cancellation Once the Transaction Is Processed</h4>
+                <div class="space-y-4">
+                    <p>
+                        All transactions made through Zapurse — including prepaid mobile recharge,
+                        DTH recharge, and bill payments — are instant and final.
+                    </p>
+                    <p>
+                        Once a transaction request is submitted and successfully processed, it
+                        cannot be cancelled, as the service is delivered immediately to the
+                        respective operator or service provider.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section 2 -->
+            <section
+                class="p-8 rounded-[2rem] bg-white/30 dark:bg-gray-900 shadow-lg border border-gray-100 dark:border-gray-800">
+                <h4>2. Refund Policy</h4>
+                <p class="mb-6">
+                    Refunds are allowed only in the specific cases mentioned below:
+                </p>
+
+                <div class="space-y-8">
+                    <!-- Failed Transactions -->
+                    <div class="p-6 bg-primary/5 rounded-2xl border border-primary/10">
+                        <h5>Failed Transactions</h5>
+                        <p class="mb-4">
+                            A transaction is considered failed if:
+                        </p>
+                        <ul class="space-y-2 list-none pl-0 mb-6">
+                            @for (item of failedConditions; track item) {
+                            <li class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 rounded-full bg-gray-400"></div>
+                                {{ item }}
+                            </li>
+                            }
+                        </ul>
+                        <p class="mb-2">In such cases:</p>
+                        <ul class="space-y-2 list-none pl-0">
+                            @for (item of failedActions; track item) {
+                            <li class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 rounded-full bg-gray-400"></div>
+                                {{ item }}
+                            </li>
+                            }
+                        </ul>
+                    </div>
+
+                    <!-- Pending Transactions -->
+                    <div class="p-6 bg-secondary/5 rounded-2xl border border-secondary/10">
+                        <h5>Pending Transactions</h5>
+                        <p class="mb-4">
+                            If a transaction remains pending due to operator-side delay:
+                        </p>
+                        <ul class="space-y-3 list-none pl-0">
+                            @for (item of pendingConditions; track item) {
+                            <li class="flex gap-2">
+                                <div class="w-1.5 h-1.5 rounded-full bg-gray-400 mt-2"></div>
+                                {{ item }}
+                            </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3 -->
+            <section
+                class="p-8 rounded-[2rem] bg-white/30 dark:bg-gray-900 shadow-lg border border-gray-100 dark:border-gray-800">
+                <h4>3. Exceptions (No Refund)</h4>
+                <p class="mb-6">
+                    Refunds will not be issued in the following situations:
+                </p>
+                <div class="grid md:grid-cols-2 gap-4">
+                    @for (item of exceptions; track item) {
+                    <div
+                        class="flex items-center gap-3 p-4 bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800">
+                        <div class="w-1 h-1 rounded-full bg-gray-400"></div>
+                        {{ item }}
+                    </div>
+                    }
+                </div>
+                <p class="mt-8 text-center font-semibold">
+                    Zapurse is not responsible for errors caused by incorrect user input.
+                </p>
+            </section>
+
+            <!-- Sections 4 & 5 -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <section
+                    class="p-8 rounded-[2rem] bg-white/30 dark:bg-gray-900 shadow-lg border border-gray-100 dark:border-gray-800">
+                    <h4>4. Processing Time for Refunds</h4>
+                    <div class="space-y-4">
+                        @for (item of processingTimes; track item.method) {
+                        <div class="flex justify-between p-4 bg-primary/5 rounded-xl border border-primary/10">
+                            <span class="font-semibold">{{ item.method }}</span>
+                            <span class="font-bold">{{ item.time }}</span>
+                        </div>
+                        }
+                        <p class="text-xs opacity-60 italic">
+                            Refund timelines may vary based on bank policies.
+                        </p>
+                    </div>
+                </section>
+
+                <section
+                    class="p-8 rounded-[2rem] bg-white/30 dark:bg-gray-900 shadow-lg border border-gray-100 dark:border-gray-800">
+                    <h4>5. Disputes & Support</h4>
+                    <p class="mb-4">For failed or pending transactions, contact support with:</p>
+                    <ul class="space-y-1 list-none pl-0 mb-6">
+                        @for (item of supportRequirements; track item) {
+                        <li class="flex items-center gap-2">
+                            <div class="w-1.5 h-1.5 rounded-full bg-gray-400"></div>
+                            {{ item }}
+                        </li>
+                        }
+                    </ul>
+                    <p><strong>Email:</strong> support&#64;zapurse.com</p>
+                    <p><strong>Website:</strong> www.zapurse.in</p>
+                </section>
+            </div>
+
+            <!-- Section 6 -->
+            <section
+                class="p-8 rounded-[2rem] bg-white/30 dark:bg-gray-900 shadow-lg border border-gray-100 dark:border-gray-800">
+                <h4>6. Operator-Level Policies</h4>
+                <p class="max-w-2xl mx-auto opacity-80">
+                    Refunds depend on final operator status. If marked successful by the operator,
+                    no refund can be issued even in case of non-receipt.
+                </p>
+            </section>
+
+            <!-- Footer / Policy Modification -->
+            <section
+                class="p-10 rounded-[2.5rem] bg-white/30 dark:bg-gray-900 text-black dark:text-white shadow-lg relative overflow-hidden transition-all duration-500">
+
+                <h4>7. Modification of Policy</h4>
+                <p class="opacity-90 leading-relaxed">
+                    Zapurse reserves the right to modify this policy at any time.
+                    Changes will be published on the Zapurse app or website.
+                </p>
+            </section>
+        </div>
+    </div>
+</app-legal-layout>

@@ -1,0 +1,40 @@
+<section class="pt-32 mb-10 relative overflow-hidden">
+    <app-particles className="absolute inset-0 z-0" [quantity]="100" [ease]="80" color="#cbd5e1"
+        [refresh]="true"></app-particles>
+    <div class="container mx-auto px-4 md:px-6 relative z-10">
+        <!-- Heading -->
+        <div class="text-center max-w-3xl mx-auto mb-20 animate-in fade-in slide-in-from-bottom duration-700">
+            <h2>Why Choose Zapurse?</h2>
+            <p>
+                We combine cutting-edge technology with a human-centric approach to deliver the best fintech experience
+                in rural and urban India.
+            </p>
+        </div>
+
+        <!-- Feature Cards -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            @for (feature of features; track feature.title; let index = $index) {
+            <div class="relative overflow-hidden rounded-[2rem] p-10 bg-white/30 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-lg hover:shadow-xl transition-all duration-500 animate-in fade-in slide-in-from-bottom-8 fill-mode-both"
+                [style.animation-delay]="(index * 100) + 'ms'">
+                <!-- Subtle Blurred Circle -->
+                <div class="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-3xl pointer-events-none">
+                </div>
+
+                <!-- Icon Container -->
+                <div
+                    class="w-20 h-20 bg-primary/10 text-white rounded-3xl flex items-center justify-center mb-6 mx-auto relative z-10 shadow-md border border-white/10">
+                    <lucide-icon [img]="feature.icon" class="w-8 h-8 text-white stroke-2"></lucide-icon>
+                </div>
+
+                <!-- Title & Description -->
+                <h4 class="text-lg font-semibold text-gray-900 dark:text-white text-center mb-2">
+                    {{ feature.title }}
+                </h4>
+                <p class="text-center text-gray-900 dark:text-gray-300 leading-relaxed">
+                    {{ feature.description }}
+                </p>
+            </div>
+            }
+        </div>
+    </div>
+</section>

@@ -1,0 +1,115 @@
+<div class="pt-32 min-h-screen pb-20 bg-transparent overflow-hidden relative">
+    <app-particles className="absolute inset-0 z-0" [quantity]="120" [ease]="80" color="#cbd5e1"
+        [refresh]="true"></app-particles>
+
+    <div class="container mx-auto px-4 md:px-6 relative z-10">
+
+        <!-- Header -->
+        <div class="text-center max-w-3xl mx-auto mb-20 animate-in fade-in slide-in-from-bottom-8 duration-700">
+            <h1 class="font-black mb-6">
+                Get in Touch
+            </h1>
+            <p class="leading-relaxed">
+                Have questions about our services or want to become a partner? We’re here to help you navigate the
+                future of fintech.
+            </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start max-w-6xl mx-auto">
+
+            <!-- Contact Info -->
+            <div class="space-y-12 animate-in fade-in slide-in-from-left-8 duration-700 delay-200 fill-mode-both">
+                <div class="space-y-8">
+                    <h4 class="flex items-center gap-3 font-black">
+                        <span class="w-2 h-8 bg-secondary rounded-full"></span>
+                        Contact Information
+                    </h4>
+
+                    <div class="grid gap-8">
+                        @for (item of contactInfo; track item.title) {
+                        <div
+                            class="flex items-start gap-6 p-6 rounded-3xl border bg-white/30 dark:bg-gray-900 shadow-sm hover:shadow-lg transition-all duration-300">
+                            <div class="p-4 rounded-2xl flex items-center justify-center" [ngClass]="item.bg">
+                                <lucide-icon [img]="item.icon" [size]="24"></lucide-icon>
+                            </div>
+                            <div>
+                                <h5 class="font-bold mb-2">{{ item.title }}</h5>
+                                <p>{{ item.content }}</p>
+                            </div>
+                        </div>
+                        }
+                    </div>
+                </div>
+
+                <!-- WhatsApp Box -->
+                <div
+                    class="p-10 rounded-[2.5rem] bg-white/30 dark:bg-gray-900 shadow-lg hover:shadow-2xl transition-all duration-500 relative overflow-hidden">
+                    <div
+                        class="absolute top-0 right-0 w-48 h-48 bg-white/5 dark:bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none">
+                    </div>
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div
+                                class="w-12 h-12 bg-white/10 dark:bg-white/20 rounded-xl flex items-center justify-center border border-white/20 dark:border-white/10">
+                                <lucide-icon [img]="MessageSquare" [size]="24"></lucide-icon>
+                            </div>
+                            <h4 class="font-black">
+                                Need Immediate Support?
+                            </h4>
+                        </div>
+                        <p class="mb-8 leading-relaxed">
+                            Our support team is available on WhatsApp for quick, real-time assistance.
+                        </p>
+                        <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer"
+                            class="text-black inline-flex items-center gap-3 px-8 py-4 bg-white dark:bg-gray-200 rounded-2xl font-black hover:scale-105 active:scale-95 transition-all shadow-xl">
+                            Chat on WhatsApp <lucide-icon [img]="ArrowRight" [size]="20"></lucide-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div
+                class="p-10 md:p-14 rounded-[2.5rem] bg-white/30 dark:bg-gray-900 shadow-lg hover:shadow-2xl transition-all duration-500 relative overflow-hidden animate-in fade-in slide-in-from-right-8 duration-700 delay-300 fill-mode-both">
+                <div
+                    class="absolute top-0 right-0 w-64 h-64 bg-white/5 dark:bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none">
+                </div>
+                <div class="relative z-10">
+                    <h4 class="font-black mb-10">
+                        Send us a Message
+                    </h4>
+
+                    <form class="space-y-8">
+                        <div class="space-y-3">
+                            <label class="font-black uppercase tracking-widest">First Name</label>
+                            <input type="text" placeholder="John"
+                                class="w-full px-6 py-4 rounded-2xl border bg-white/20 dark:bg-gray-800 placeholder-gray-500 dark:placeholder-gray-400 focus:ring-4 outline-none transition-all" />
+                        </div>
+                        <div class="space-y-3">
+                            <label class="font-black uppercase tracking-widest">Last Name</label>
+                            <input type="text" placeholder="Doe"
+                                class="w-full px-6 py-4 rounded-2xl border bg-white/20 dark:bg-gray-800 placeholder-gray-500 dark:placeholder-gray-400 focus:ring-4 outline-none transition-all" />
+                        </div>
+
+                        <div class="space-y-3">
+                            <label class="font-black uppercase tracking-widest">Email Address</label>
+                            <input type="email"
+                                class="w-full px-6 py-4 rounded-2xl border bg-white/20 dark:bg-gray-800 placeholder-gray-500 dark:placeholder-gray-400 focus:ring-4 outline-none transition-all" />
+                        </div>
+
+                        <div class="space-y-3">
+                            <label class="font-black uppercase tracking-widest">Message</label>
+                            <textarea
+                                class="w-full px-6 py-4 rounded-2xl border bg-white/20 dark:bg-gray-800 min-h-[140px] resize-none placeholder-gray-500 dark:placeholder-gray-400 focus:ring-4 outline-none transition-all"></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="text-black w-full py-5 bg-white dark:bg-gray-200 rounded-[1.5rem] font-black hover:scale-[1.02] active:scale-95 transition-all shadow-2xl flex items-center justify-center gap-3 cursor-pointer">
+                            Send Message <lucide-icon [img]="Send" [size]="20"></lucide-icon>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

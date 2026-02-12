@@ -1,0 +1,8 @@
+button:hover lucide-icon {
+  transform: translateY(-2px);
+  transition: transform 0.3s ease;
+}
+
+lucide-icon {
+  transition: transform 0.3s ease;
+}

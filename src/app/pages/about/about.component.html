@@ -1,0 +1,89 @@
+<div class="pt-32 min-h-screen pb-5 bg-transparent overflow-hidden relative">
+
+    <!-- Particles -->
+    <app-particles className="absolute inset-0 z-0" [quantity]="120" [ease]="80" color="#cbd5e1"
+        [refresh]="true"></app-particles>
+
+    <div class="container mx-auto px-4 md:px-6 relative z-10">
+
+        <!-- Hero -->
+        <section class="relative py-24 bg-white/30 dark:bg-gray-900 overflow-hidden rounded-[3rem] mb-16 shadow-2xl">
+            <div
+                class="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2">
+            </div>
+            <div class="relative z-10 text-center max-w-4xl mx-auto">
+                <div class="animate-in fade-in slide-in-from-bottom-8 duration-700">
+                    <h2 class="font-black mb-6">
+                        Empowering Every Indian with Digital Freedom
+                    </h2>
+                    <p class="leading-relaxed">
+                        Zapurse, the digital arm of Atishay Limited, is bridging the divide by bringing essential
+                        banking to the last mile.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats -->
+        <section class="py-20 border-b border-gray-200 dark:border-gray-700">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+                @for (stat of stats; track stat.label; let index = $index) {
+                <div class="animate-in fade-in zoom-in-95 fill-mode-both duration-700"
+                    [style.animation-delay]="(index * 100) + 'ms'">
+                    <div
+                        class="font-black flex justify-center items-center mb-3 text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+                        <app-number-ticker [value]="stat.value"></app-number-ticker>
+                        <span>{{ stat.suffix }}</span>
+                    </div>
+                    <div class="uppercase tracking-widest font-bold">
+                        {{ stat.label }}
+                    </div>
+                </div>
+                }
+            </div>
+        </section>
+
+        <!-- Mission & Vision -->
+        <section class="py-32">
+            <div class="grid lg:grid-cols-2 gap-20 items-start">
+
+                <!-- Left -->
+                <div class="space-y-10 animate-in fade-in slide-in-from-left-8 duration-700 fill-mode-both">
+                    @for (item of missionVision; track item.title) {
+                    <div class="p-10 rounded-[2.5rem] bg-white/30 dark:bg-gray-900 shadow-lg relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-2xl"></div>
+                        <div class="flex items-center gap-6 mb-6 relative z-10">
+                            <div class="p-4 bg-white/10 rounded-2xl border border-white/20">
+                                <lucide-icon [img]="item.icon" [size]="32"></lucide-icon>
+                            </div>
+                            <h4 class="font-black mt-5">{{ item.title }}</h4>
+                        </div>
+                        <p class="relative z-10">{{ item.text }}</p>
+                    </div>
+                    }
+                </div>
+
+                <!-- Right -->
+                <div class="lg:pt-10 animate-in fade-in slide-in-from-right-8 duration-700 fill-mode-both">
+                    <h3 class="font-black mb-4">About Atishay Limited</h3>
+                    <p class="mb-6">
+                        Zapurse is a flagship brand of Atishay Limited, a technology-driven company listed on the Bombay
+                        Stock Exchange (BSE).
+                    </p>
+
+                    <div class="grid sm:grid-cols-2 gap-6 mt-12">
+                        @for (item of atishayStats; track item.label) {
+                        <div class="flex items-center gap-4 p-4 rounded-2xl bg-white/30 dark:bg-gray-900 shadow-lg">
+                            <div class="p-2 bg-white/50 rounded-lg">
+                                <lucide-icon [img]="item.icon"></lucide-icon>
+                            </div>
+                            <span class="font-bold">{{ item.label }}</span>
+                        </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</div>

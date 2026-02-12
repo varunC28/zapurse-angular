@@ -1,0 +1,112 @@
+<nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" [ngClass]="{
+        'bg-background shadow-lg': mobileMenuOpen(),
+        'bg-background/80 backdrop-blur-md py-3 border-b border-border': !mobileMenuOpen() && isScrolled(),
+        'bg-transparent py-5': !mobileMenuOpen() && !isScrolled()
+    }">
+    <div class="container mx-auto px-4 md:px-6 flex items-center justify-between md:grid md:grid-cols-[auto_1fr_auto]">
+        <!-- Logo - Left -->
+        <a routerLink="/" (click)="onLogoClick($event)"
+            class="flex items-center gap-2 text-2xl font-bold text-black dark:text-white">
+            <img src="assets/brand-logo/logo.png" alt="Zapurse logo" class="h-12 w-auto"
+                onerror="this.src='https://placehold.co/100x40?text=Zapurse'" />
+        </a>
+
+        <!-- Desktop Nav Links - Center -->
+        <div class="hidden md:flex items-center justify-center space-x-8">
+            @for (link of navLinks; track link.name) {
+            <div class="relative group">
+                @if (link.isDropdown) {
+                <div
+                    class="text-lg flex items-center gap-1 cursor-pointer py-2 font-medium text-black dark:text-white hover:text-primary transition-colors">
+                    <span class="whitespace-nowrap">{{ link.name }}</span>
+                    <lucide-icon [img]="ChevronDown" [size]="14"></lucide-icon>
+
+                    <!-- Dropdown -->
+                    <div
+                        class="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 overflow-hidden">
+                        @for (item of link.items; track item.name) {
+                        <a [routerLink]="item.path" [fragment]="item.fragment"
+                            routerLinkActive="text-primary font-semibold"
+                            class="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-green-900/30 hover:text-primary transition-colors">
+                            {{ item.name }}
+                        </a>
+                        }
+                    </div>
+                </div>
+                } @else {
+                <a [routerLink]="link.path" routerLinkActive="text-primary" [routerLinkActiveOptions]="{ exact: true }"
+                    class="text-lg text-black dark:text-white hover:text-primary transition-colors whitespace-nowrap">
+
+                    {{ link.name }}
+                </a>
+                }
+            </div>
+            }
+        </div>
+
+        <!-- Right: Theme Toggle + Mobile Menu -->
+        <div class="flex items-center gap-4">
+            <app-theme-toggle></app-theme-toggle>
+            <button class="p-2 text-black dark:text-white md:hidden cursor-pointer" (click)="toggleMobileMenu()">
+                <lucide-icon [img]="Menu" [size]="24"></lucide-icon>
+            </button>
+        </div>
+    </div>
+
+
+    <!-- Mobile Menu -->
+    @if (mobileMenuOpen()) {
+    <div
+        class="fixed inset-0 bg-white/95 dark:bg-gray-950/95 backdrop-blur-xl z-[100] flex flex-col p-6 md:hidden animate-in slide-in-from-right duration-300">
+        <div class="flex items-center justify-between mb-8">
+            <span class="text-2xl font-bold text-black dark:text-white">Menu</span>
+            <button (click)="closeMobileMenu()"
+                class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-black dark:text-white cursor-pointer">
+                <lucide-icon [img]="X" [size]="24"></lucide-icon>
+            </button>
+        </div>
+
+        <div class="flex flex-col space-y-6 text-xl">
+            @for (link of navLinks; track link.name) {
+            <div>
+                @if (link.isDropdown) {
+                <div class="flex flex-col">
+                    <button (click)="toggleDropdown(link.name)"
+                        class="flex items-center justify-between w-full font-semibold text-black dark:text-white cursor-pointer">
+                        {{ link.name }}
+                        <lucide-icon [img]="ChevronDown" [size]="20" class="transition-transform"
+                            [class.rotate-180]="openDropdown() === link.name"></lucide-icon>
+                    </button>
+                    @if (openDropdown() === link.name) {
+                    <div class="flex flex-col pl-4 mt-4 space-y-3 border-l-2 border-current ml-1">
+                        @for (item of link.items; track item.name) {
+                        <a [routerLink]="item.path" [fragment]="item.fragment" (click)="closeMobileMenu()"
+                            routerLinkActive="text-primary font-semibold"
+                            class="text-lg font-medium hover:underline transition-colors">
+                            {{ item.name }}
+                        </a>
+                        }
+                    </div>
+                    }
+                </div>
+                } @else {
+                <a [routerLink]="link.path" (click)="closeMobileMenu()" routerLinkActive="text-primary font-semibold"
+                    [routerLinkActiveOptions]="{exact: true}"
+                    class="font-semibold text-black dark:text-white hover:underline transition-colors">
+                    {{ link.name }}
+                </a>
+                }
+            </div>
+            }
+        </div>
+
+        <div class="mt-auto">
+            <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Get in touch</p>
+            <div class="flex items-center gap-2 font-bold text-primary text-xl">
+                <lucide-icon [img]="Phone" [size]="20"></lucide-icon>
+                <span>+91 62626 29831</span>
+            </div>
+        </div>
+    </div>
+    }
+</nav>

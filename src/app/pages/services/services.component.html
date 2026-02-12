@@ -1,0 +1,99 @@
+<div class="pt-32 min-h-screen pb-20 bg-transparent transition-colors overflow-hidden relative">
+    <app-particles className="absolute inset-0 z-0" [quantity]="120" [ease]="80" color="#cbd5e1"
+        [refresh]="true"></app-particles>
+
+    <div class="container mx-auto px-4 md:px-6 relative z-10">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h1 class="animate-in fade-in slide-in-from-top-5 duration-700">
+                Our Services
+            </h1>
+
+            <p class="animate-in fade-in duration-700 delay-200 fill-mode-both">
+                Specialized recharge solutions tailored for retail businesses.
+                Grow your revenue with our robust recharge platform.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            @for (service of services; track service.id; let index = $index) {
+            <div [id]="service.id"
+                class="bg-white/30 dark:bg-gray-900 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-800 flex flex-col hover:-translate-y-1 animate-in fade-in slide-in-from-bottom-8 fill-mode-both"
+                [style.animation-delay]="(index * 100) + 'ms'">
+                <div class="h-2" [ngClass]="service.color"></div>
+
+                <div class="p-8 flex-grow">
+                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center text-white mb-6 shadow-md"
+                        [ngClass]="service.color">
+                        <lucide-icon [img]="service.icon" [size]="40"></lucide-icon>
+                    </div>
+
+                    <h4>{{ service.title }}</h4>
+
+                    <p class="mb-6">
+                        {{ service.description }}
+                    </p>
+
+                    <ul class="space-y-2 mb-8">
+                        @for (feature of service.features; track feature) {
+                        <li class="flex items-center gap-2">
+                            <div class="w-1.5 h-1.5 rounded-full" [ngClass]="service.color"></div>
+                            {{ feature }}
+                        </li>
+                        }
+                    </ul>
+                </div>
+
+                <div class="p-6 border-t border-gray-50 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-800/50">
+                    <div (click)="openVideoModal(service.videoSrc)"
+                        class="flex items-center justify-between font-semibold text-gray-700 dark:text-gray-200 hover:text-primary transition-colors group cursor-pointer">
+                        <span>Recharge under 30 seconds, watch video</span>
+                        <lucide-icon [img]="ArrowRight" [size]="18"
+                            class="group-hover:translate-x-1 transition-transform"></lucide-icon>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+
+        <!-- App Store Buttons and QR Codes Section (shown once after all cards) -->
+        <div
+            class="max-w-4xl mx-auto mt-16 p-8 rounded-3xl bg-white/30 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-lg">
+            <h3 class="text-2xl font-bold text-center mb-8">Download Our App</h3>
+
+            <div class="flex flex-col gap-8">
+                <!-- Store Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="https://play.google.com/store/apps/details?id=com.zapurse.zapurse&hl=en" target="_blank"
+                        rel="noopener noreferrer" class="transition-transform hover:scale-105">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                            alt="Get it on Google Play" class="h-14" />
+                    </a>
+
+                    <a href="https://apps.apple.com/in/app/zapurse-recharge/id6751755861" target="_blank"
+                        rel="noopener noreferrer" class="transition-transform hover:scale-105">
+                        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                            alt="Download on the App Store" class="h-14" />
+                    </a>
+                </div>
+
+                <!-- QR Codes -->
+                <div class="flex flex-row gap-8 justify-center items-center">
+                    <div class="text-center">
+                        <img src="assets/zapurse play store QR code.png" alt="Play Store QR Code"
+                            class="w-36 h-36 rounded-lg mx-auto" />
+                        <p class="text-sm mt-3 font-semibold text-gray-700 dark:text-gray-300">Play Store</p>
+                    </div>
+                    <div class="text-center">
+                        <img src="assets/zapurse app store QR code.png" alt="App Store QR Code"
+                            class="w-36 h-36 rounded-lg mx-auto" />
+                        <p class="text-sm mt-3 font-semibold text-gray-700 dark:text-gray-300">App Store</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Modal -->
+    <app-video-modal [videoSrc]="currentVideoSrc" [isOpen]="showVideoModal"
+        (close)="closeVideoModal()"></app-video-modal>
+</div>

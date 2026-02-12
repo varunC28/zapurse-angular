@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* -------------------------------
+   Base Variables & Theme Colors
+---------------------------------*/
+@layer base {
+    :root {
+        --background: 120 20% 96%;
+        --foreground: 231 82% 16%;
+        --border: 120 10% 85%;
+
+        --primary: 231 82% 16%;
+        --secondary: 142 71% 58%;
+
+        --font-main: 'Manrope', Arial, Helvetica, sans-serif;
+    }
+
+    .dark {
+        --background: 120 10% 5%;
+        --foreground: 120 30% 90%;
+        --border: 120 15% 20%;
+    }
+
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground antialiased;
+        font-family: var(--font-main);
+        font-feature-settings: "kern", "liga";
+    }
+
+    ul:not(.list-none) {
+        @apply list-disc pl-6;
+    }
+
+    ol {
+        @apply list-decimal pl-6;
+    }
+
+    /* -------------------------------
+     Global Headings (h1–h6)
+  ---------------------------------*/
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply text-transparent bg-clip-text font-black tracking-tighter;
+        font-family: var(--font-main);
+
+        /* Light mode gradient */
+        background-image: linear-gradient(to right, #080F4A, #182B0C);
+
+        margin-bottom: 1.5rem;
+    }
+
+    /* Individual heading sizes */
+    h1 {
+        @apply text-5xl md:text-7xl;
+    }
+
+    h2 {
+        @apply text-4xl md:text-6xl;
+    }
+
+    h3 {
+        @apply text-3xl md:text-5xl;
+    }
+
+    h4 {
+        @apply text-2xl md:text-3xl;
+    }
+
+    h5 {
+        @apply text-xl md:text-2xl;
+    }
+
+    h6 {
+        @apply text-lg md:text-xl;
+    }
+
+    /* Dark mode gradient override */
+    .dark h1,
+    .dark h2,
+    .dark h3,
+    .dark h4,
+    .dark h5,
+    .dark h6 {
+        background-image: linear-gradient(to right, #ffffff, #10b981);
+    }
+
+    /* All <p> elements */
+    p {
+        font-family: 'Manrope', Arial, Helvetica, sans-serif;
+        font-size: 17px;
+        color: #000000;
+    }
+
+    .dark p {
+        color: #D1D5DB;
+    }
+
+    /* Navbar links & Hero section heading font */
+    nav a,
+    nav span,
+    nav button,
+    .hero-text-child {
+        font-family: 'Manrope', Arial, Helvetica, sans-serif !important;
+    }
+}

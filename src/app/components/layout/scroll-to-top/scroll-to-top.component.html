@@ -1,0 +1,7 @@
+@if (isVisible()) {
+<button (click)="scrollToTop()"
+    class="fixed bottom-24 right-6 z-40 bg-white dark:bg-gray-900 text-primary dark:text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 flex items-center justify-center w-[60px] h-[60px] border border-primary/20 animate-in fade-in slide-in-from-bottom-4 duration-300"
+    aria-label="Scroll to Top">
+    <lucide-icon [img]="ChevronUp" [size]="32"></lucide-icon>
+</button>
+}

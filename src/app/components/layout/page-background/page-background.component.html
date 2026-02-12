@@ -1,0 +1,56 @@
+<div class="fixed inset-0 -z-10 pointer-events-none overflow-hidden
+    bg-gradient-to-br
+    from-gray-200       
+    via-[#217095]       
+    dark:from-[#0c1b21]
+    dark:via-[#0f2228]
+    dark:to-[#132015]
+    transition-colors duration-500">
+    <!-- Top Right Light Blue Blob -->
+    <div class="absolute -top-1/4 -right-1/4 w-full h-full
+        bg-[#217095]
+        rounded-full blur-[200px]
+        mix-blend-multiply dark:mix-blend-lighten
+        animate-fade-in-delayed-1"></div>
+
+    <!-- Bottom Left Lightest Green Blob -->
+    <div class="absolute -bottom-1/4 -left-1/4 w-full h-full
+        bg-[#c0cc64]
+        rounded-full blur-[220px]
+        mix-blend-multiply dark:mix-blend-lighten
+        animate-fade-in-delayed-2"></div>
+
+    <!-- Subtle Gray Accent -->
+    <div class="absolute top-1/2 left-1/2
+        -translate-x-1/2 -translate-y-1/2
+        w-full h-full
+        bg-gray-300
+        rounded-full blur-[250px] opacity-20
+        animate-fade-in-delayed-3"></div>
+</div>
+
+<style>
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+    }
+
+    .animate-fade-in-delayed-1 {
+        opacity: 0.22;
+        animation: fadeIn 2s ease-out forwards;
+    }
+
+    .animate-fade-in-delayed-2 {
+        opacity: 0.16;
+        animation: fadeIn 2s ease-out 0.4s forwards;
+        animation-fill-mode: both;
+        /* ensures opacity 0 before anim starts */
+    }
+
+    .animate-fade-in-delayed-3 {
+        opacity: 0.08;
+        animation: fadeIn 2s ease-out 0.8s forwards;
+        animation-fill-mode: both;
+    }
+</style>

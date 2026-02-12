@@ -1,0 +1,42 @@
+<div class="pt-24 pb-20 min-h-screen transition-colors duration-300 bg-transparent">
+    <div class="container mx-auto px-4 md:px-6 max-w-4xl">
+        <!-- Header -->
+        <div class="text-center mb-16 animate-in fade-in slide-in-from-top-8 duration-700">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
+                Frequently Asked Questions
+            </h1>
+            <p class="text-xl text-gray-900 dark:text-gray-300">
+                Can't find the answer you're looking for? Reach out to our support.
+            </p>
+        </div>
+
+        <!-- FAQ Items -->
+        <div class="space-y-4">
+            @for (faq of faqData; track faq.question; let index = $index) {
+            <div class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-700 shadow-sm animate-in fade-in slide-in-from-bottom-4 fill-mode-both"
+                [style.animation-delay]="(index * 50) + 'ms'">
+                <button (click)="toggleIndex(index)"
+                    class="w-full px-8 py-6 flex items-center justify-between text-left focus:outline-none cursor-pointer">
+                    <span class="text-lg font-bold transition-colors duration-200"
+                        [ngClass]="openIndex() === index ? 'text-primary dark:text-gray-100' : 'text-gray-900 dark:text-gray-100'">
+                        {{ faq.question }}
+                    </span>
+                    @if (openIndex() === index) {
+                    <lucide-icon [img]="Minus" class="text-primary flex-shrink-0"></lucide-icon>
+                    } @else {
+                    <lucide-icon [img]="Plus" class="text-gray-400 dark:text-gray-500 flex-shrink-0"></lucide-icon>
+                    }
+                </button>
+
+                <div class="overflow-hidden transition-[height] duration-300 ease-in-out"
+                    [style.height]="openIndex() === index ? 'auto' : '0'"
+                    [style.opacity]="openIndex() === index ? '1' : '0'">
+                    <div class="px-8 pb-6 text-gray-600 dark:text-gray-400 leading-relaxed whitespace-pre-line">
+                        {{ faq.answer }}
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</div>

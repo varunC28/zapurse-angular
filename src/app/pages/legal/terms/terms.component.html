@@ -1,0 +1,59 @@
+<app-legal-layout title="Terms & Conditions" lastUpdated="January 20, 2026">
+    <!-- Intro -->
+    <div class="mb-12 space-y-4">
+        <p class="text-xl font-medium text-primary dark:text-green-100/80 leading-relaxed">
+            Welcome to Zapurse. These terms govern your use of our platform and
+            the services we provide to our valued partners and users.
+        </p>
+        <div class="h-1 w-20 bg-secondary/20 rounded-full"></div>
+    </div>
+
+    <!-- Sections -->
+    <div class="grid gap-6">
+        <section *ngFor="let section of sections; let i = index" class="group relative p-6 rounded-2xl bg-white dark:bg-gray-800/40
+             border border-gray-100 dark:border-gray-800
+             hover:border-primary/30 transition-all duration-300 shadow-sm
+             animate-in fade-in slide-in-from-left-6" [style.animationDelay]="i * 100 + 'ms'">
+            <div class="flex items-start gap-6">
+                <!-- Icon -->
+                <div class="flex-shrink-0 w-12 h-12 rounded-xl
+                 bg-primary/5 dark:bg-green-400/10
+                 text-primary dark:text-green-400
+                 flex items-center justify-center
+                 group-hover:bg-primary
+                 dark:group-hover:bg-green-400
+                 group-hover:text-white
+                 dark:group-hover:text-black
+                 transition-colors">
+                    <lucide-icon [img]="section.icon" size="24"></lucide-icon>
+                </div>
+
+                <!-- Content -->
+                <div class="space-y-2">
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white
+                   group-hover:text-primary
+                   dark:group-hover:text-green-300 transition-colors">
+                        {{ section.title }}
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                        {{ section.desc }}
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Important Notice -->
+    <section class="flex items-start gap-6 p-6 mt-8 rounded-3xl
+           bg-white/30 dark:bg-gray-900
+           border border-gray-100 dark:border-gray-800
+           shadow-sm hover:shadow-lg transition-all duration-300">
+        <div>
+            <h4 class="font-black mb-2">Important Notice</h4>
+            <p class="leading-relaxed">
+                These terms are subject to change. Continued use of the platform after updates
+                constitutes acceptance of the new terms. Please review this page regularly.
+            </p>
+        </div>
+    </section>
+</app-legal-layout>

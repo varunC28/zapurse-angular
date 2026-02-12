@@ -1,0 +1,30 @@
+.comparison-container {
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.comparison-container img {
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Smooth transitions for the slider */
+.comparison-container:not(:active) [style*="left"] {
+  transition: left 0.1s ease-out;
+}
+
+/* Handle hover effect */
+.comparison-container [style*="left"] > div:last-child:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+
+/* Active state for handle */
+.comparison-container:active [style*="left"] > div:last-child {
+  transform: scale(0.95);
+  transition: transform 0.1s ease;
+}

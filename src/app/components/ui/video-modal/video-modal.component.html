@@ -1,0 +1,15 @@
+@if (isOpen) {
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 animate-in fade-in duration-200"
+    (click)="onClose()">
+    <div class="relative w-full max-w-5xl bg-black rounded-2xl overflow-hidden shadow-2xl animate-in zoom-in-95 duration-200"
+        (click)="$event.stopPropagation()">
+
+        <button (click)="onClose()"
+            class="absolute top-4 right-4 z-10 p-2 bg-black/50 hover:bg-black/70 text-white rounded-full transition-colors">
+            <lucide-icon [img]="X" [size]="24"></lucide-icon>
+        </button>
+
+        <video [src]="videoSrc" controls autoplay class="w-full h-auto max-h-[80vh] object-contain"></video>
+    </div>
+</div>
+}

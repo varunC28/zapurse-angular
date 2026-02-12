@@ -1,0 +1,10 @@
+<svg [attr.width]="width * squares[0]" [attr.height]="height * squares[1]"
+    class="absolute inset-0 h-full w-full border border-gray-400/30" [ngClass]="className">
+    @for (item of gridItems; track $index) {
+    <rect [attr.x]="getX($index)" [attr.y]="getY($index)" [attr.width]="width" [attr.height]="height"
+        class="stroke-gray-800/20 transition-all duration-100 ease-in-out [&:not(:hover)]:duration-1000" [ngClass]="[
+        hoveredSquare() === $index ? 'fill-gray-300/30' : 'fill-transparent',
+        squaresClassName
+      ]" (mouseenter)="setHoveredSquare($index)" (mouseleave)="setHoveredSquare(null)"></rect>
+    }
+</svg>

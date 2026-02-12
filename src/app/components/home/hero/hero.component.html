@@ -1,0 +1,60 @@
+<section #heroRef class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <app-interactive-grid-pattern className="absolute inset-0 z-0 text-gray-200/50 dark:text-gray-800/20"
+        [squares]="[80, 80]"></app-interactive-grid-pattern>
+    <div class="container mx-auto px-4 md:px-6 z-10 grid md:grid-cols-2 gap-12 items-center pointer-events-none">
+        <!-- LEFT : Text -->
+        <div #contentRef class="text-center md:text-left space-y-6">
+            <div class="inline-block px-4 py-1.5 rounded-full bg-[#080F4A]/5 dark:bg-green-400/10
+               text-[#080F4A] dark:text-green-400 text-sm font-bold tracking-wide
+               border border-[#080F4A]/10 dark:border-green-400/20 mb-2">
+                9 Years of Trust
+            </div>
+
+            <h1 class="hero-text-child text-5xl md:text-6xl lg:text-8xl leading-[0.95] text-black dark:text-white">
+                Empowering <br />
+                <span class="text-primary">Digital Payments</span>
+            </h1>
+
+            <p>
+                Join India's fastest-growing fintech network. Mobile Recharges and DTH Services —
+                all in one powerful platform for your business.
+            </p>
+
+            <div class="hero-text-child flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-8">
+                <a href="https://play.google.com/store/apps/details?id=com.zapurse.zapurse&hl=en" target="_blank"
+                    rel="noopener noreferrer" class="transition-transform hover:scale-105 pointer-events-auto">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                        alt="Get it on Google Play" class="h-14" />
+                </a>
+
+                <a href="https://apps.apple.com/in/app/zapurse-recharge/id6751755861" target="_blank"
+                    rel="noopener noreferrer" class="transition-transform hover:scale-105 pointer-events-auto">
+                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                        alt="Download on the App Store" class="h-14" />
+                </a>
+            </div>
+        </div>
+
+        <!-- RIGHT : Image -->
+        <div class="relative hidden md:flex justify-center">
+            <div #imageRef class="relative z-10 w-full max-w-[300px] perspective-1000">
+                <img src="assets/hero-illustration.png" alt="Zapurse Mobile Recharge and Fintech App" class="w-full object-contain drop-shadow-[0_20px_50px_rgba(8,15,74,0.3)]
+                 rounded-[2.5rem] transition-transform duration-500 hover:rotate-2"
+                    onerror="this.src='https://placehold.co/300x600?text=App+Preview'" />
+
+                <div class="absolute -top-10 -right-10 w-32 h-32 bg-green-500/20 rounded-full blur-2xl animate-pulse">
+                </div>
+                <div
+                    class="absolute -bottom-10 -left-10 w-40 h-40 bg-[#182B0C]/20 rounded-full blur-3xl animate-bounce-slow">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2
+           cursor-pointer opacity-50 hover:opacity-100 transition-opacity" (click)="scrollToBottom()">
+        <div class="w-[1px] h-16 bg-gradient-to-b from-[#182B0C] to-transparent dark:from-green-400/50 animate-pulse">
+        </div>
+    </div>
+</section>
