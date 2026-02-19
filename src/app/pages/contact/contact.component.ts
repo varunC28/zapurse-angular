@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { LucideAngularModule, Mail, Phone, MapPin, Send, MessageSquare, ArrowRight } from 'lucide-angular';
 import { ParticlesComponent } from '../../components/ui/particles/particles.component';
+import { SuccessModalComponent } from '../../components/ui/success-modal/success-modal.component';
+import { signal } from '@angular/core';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, LucideAngularModule, ParticlesComponent],
+  imports: [CommonModule, FormsModule, LucideAngularModule, ParticlesComponent, SuccessModalComponent],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css'
 })
@@ -17,6 +20,17 @@ export class ContactComponent {
   readonly Send = Send;
   readonly MessageSquare = MessageSquare;
   readonly ArrowRight = ArrowRight;
+
+  showSuccessModal = signal(false);
+
+  onSubmit() {
+    this.showSuccessModal.set(true);
+
+    // Auto-hide after 3 seconds
+    setTimeout(() => {
+      this.showSuccessModal.set(false);
+    }, 3000);
+  }
 
   contactInfo = [
     {

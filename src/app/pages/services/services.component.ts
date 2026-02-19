@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
 import { LucideAngularModule, Smartphone, Monitor, ArrowRight } from 'lucide-angular';
 import { ParticlesComponent } from '../../components/ui/particles/particles.component';
 import { VideoModalComponent } from '../../components/ui/video-modal/video-modal.component';
@@ -8,7 +7,7 @@ import { VideoModalComponent } from '../../components/ui/video-modal/video-modal
 @Component({
   selector: 'app-services',
   standalone: true,
-  imports: [CommonModule, RouterLink, LucideAngularModule, ParticlesComponent, VideoModalComponent],
+  imports: [CommonModule, LucideAngularModule, ParticlesComponent, VideoModalComponent],
   templateUrl: './services.component.html',
   styleUrl: './services.component.css'
 })

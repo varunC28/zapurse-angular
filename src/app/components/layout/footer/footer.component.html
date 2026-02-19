@@ -14,7 +14,7 @@
             <!-- Brand -->
             <div class="space-y-6">
                 <a routerLink="/" class="text-2xl font-bold tracking-tighter flex items-center gap-2">
-                    <span class="text-4xl font-black">Zapurse</span>
+                    <span class="text-5xl font-black">Zapurse</span>
                 </a>
 
                 <p class="leading-relaxed max-w-sm">
@@ -43,7 +43,7 @@
                     @for (link of serviceLinks; track link.name) {
                     <li>
                         <a [routerLink]="link.path" [fragment]="link.fragment"
-                            class="text-lg transition-colors hover:underline">
+                            class="text-xl transition-colors hover:underline">
                             {{ link.name }}
                         </a>
                     </li>
@@ -60,7 +60,7 @@
                 <ul class="space-y-4 list-none pl-0">
                     @for (link of discoverLinks; track link.name) {
                     <li>
-                        <a [routerLink]="link.path" class="text-lg transition-colors hover:underline">
+                        <a [routerLink]="link.path" class="text-xl transition-colors hover:underline">
                             {{ link.name }}
                         </a>
                     </li>

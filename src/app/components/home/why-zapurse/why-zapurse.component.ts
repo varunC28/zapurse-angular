@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { LucideAngularModule, ShieldCheck, Zap, Users, CheckCircle2 } from 'lucide-angular';
 import { ParticlesComponent } from '../../ui/particles/particles.component';
 
+
 @Component({
   selector: 'app-why-zapurse',
   standalone: true,
@@ -11,7 +12,6 @@ import { ParticlesComponent } from '../../ui/particles/particles.component';
 })
 export class WhyZapurseComponent {
 
-  // 
 
   features = [
     {
@@ -36,3 +36,4 @@ export class WhyZapurseComponent {
     }
   ];
 }
+

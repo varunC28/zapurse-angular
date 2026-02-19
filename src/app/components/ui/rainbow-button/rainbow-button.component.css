@@ -1,0 +1,57 @@
+.rainbow-wrapper {
+    position: relative;
+    padding: 2px;
+    border-radius: 12px;
+    background: transparent;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.rainbow-wrapper:hover {
+    transform: scale(1.05);
+}
+
+/* Animated Rainbow Border */
+.rainbow-border {
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    background: linear-gradient(90deg,
+            #ff0000,
+            #ff7f00,
+            #ffff00,
+            #00ff00,
+            #0000ff,
+            #4b0082,
+            #8f00ff,
+            #ff0000);
+    background-size: 300% 300%;
+    animation: rainbowMove 4s linear infinite;
+}
+
+/* Inner Button Content */
+.rainbow-content {
+    position: relative;
+    display: block;
+    padding: 12px 28px;
+    border-radius: 10px;
+    background: #111;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    z-index: 2;
+}
+
+/* Animation */
+@keyframes rainbowMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 300% 50%;
+    }
+}
