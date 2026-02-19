@@ -1,6 +1,8 @@
-import { Component, HostListener, signal, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, HostListener, signal, Inject, PLATFORM_ID, OnInit } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { LucideAngularModule, ChevronUp } from 'lucide-angular';
+import { Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-scroll-to-top',
@@ -9,11 +11,24 @@ import { LucideAngularModule, ChevronUp } from 'lucide-angular';
   templateUrl: './scroll-to-top.component.html',
   styleUrl: './scroll-to-top.component.css'
 })
-export class ScrollToTopComponent {
+export class ScrollToTopComponent implements OnInit {
   isVisible = signal(false);
   readonly ChevronUp = ChevronUp;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private router: Router
+  ) { }
+
+  ngOnInit() {
+    if (isPlatformBrowser(this.platformId)) {
+      this.router.events.pipe(
+        filter(event => event instanceof NavigationEnd)
+      ).subscribe(() => {
+        window.scrollTo(0, 0);
+      });
+    }
+  }
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
