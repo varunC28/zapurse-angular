@@ -12,29 +12,29 @@
             </p>
         </div>
 
-        <div class="max-w-4xl mx-auto">
-            <div class="comparison-container relative w-full aspect-[4/5] md:aspect-video rounded-3xl overflow-hidden shadow-2xl border-4 border-white dark:border-gray-800 select-none cursor-grab active:cursor-grabbing"
+        <div class="max-w-4xl mx-auto ">
+            <div class="comparison-container relative w-full aspect-[4/5] md:aspect-video rounded-3xl overflow-hidden shadow-2xl border-4 border-white dark:border-gray-800 select-none cursor-grab active:cursor-grabbing "
                 role="slider" [attr.aria-valuenow]="sliderPosition()" aria-valuemin="0" aria-valuemax="100"
                 aria-label="Image comparison slider">
 
                 <!-- Amount Payable (Right Side) -->
                 <div
-                    class="absolute inset-0 w-full h-full bg-slate-50 dark:bg-slate-900 flex items-center justify-center + p-4 md:p-6">
+                    class="absolute inset-0 w-full h-full bg-green-600 dark:bg-slate-900 flex items-center justify-center p-4 md:p-6">
                     <img src="assets/brand-logo/After.png" alt="Amount Payable"
                         class="w-full h-full object-contain translate-x-12 md:translate-x-20" draggable="false">
                     <div
-                        class="absolute top-4 right-4 bg-[#25D366] backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-semibold">
+                        class="absolute top-4 right-4 bg-black backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-semibold">
                         Amount Payable
                     </div>
                 </div>
 
                 <!-- Rs349_Recharge (Left Side) --->
-                <div class="absolute inset-0 w-full h-full bg-slate-50 dark:bg-slate-900 overflow-hidden flex items-center justify-center + p-4 md:p-6"
+                <div class="absolute inset-0 w-full h-full bg-red-500 overflow-hidden flex items-center justify-center p-4 md:p-6"
                     [style.clip-path]="'inset(0 ' + (100 - sliderPosition()) + '% 0 0)'">
                     <img src="assets/brand-logo/Before.png" alt="Recharge Amount"
                         class="w-full h-full object-contain -translate-x-12 md:-translate-x-20" draggable="false">
                     <div
-                        class="absolute top-4 left-4 bg-[#E11900] text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
+                        class="absolute top-4 left-4 bg-black text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
                         Recharge Amount
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                     <div
                         class="relative w-8 h-8 rounded-full bg-white shadow-2xl flex items-center justify-center pointer-events-auto cursor-grab active:cursor-grabbing border-2 border-primary">
                         <!-- Grip Icon -->
-                        <svg class="w-4 h-4 text-primary" fill="white" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-4 h-4 text-primary" fill="white" stroke="currentColor" viewBox="0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M8 9l4-4 4 4m0 6l-4 4-4-4"></path>
                         </svg>
@@ -59,7 +59,7 @@
 
             <!-- Instructions -->
             <div class="text-center mt-8">
-                <p class="text-sm text-gray-500 dark:text-gray-400 flex items-center justify-center gap-2">
+                <p class="text-sm text-black dark:text-white flex items-center justify-center gap-2">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"></path>

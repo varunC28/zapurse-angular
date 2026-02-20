@@ -7,7 +7,7 @@
         <!-- Logo - Left -->
         <a routerLink="/" (click)="onLogoClick($event)"
             class="flex items-center gap-2 text-2xl font-bold text-black dark:text-white">
-            <img src="assets/brand-logo/logo.png" alt="Zapurse logo" class="h-12 w-auto"
+            <img src="assets/brand-logo/logo.png" alt="Zapurse logo" class="h-[75px] w-auto"
                 onerror="this.src='https://placehold.co/100x40?text=Zapurse'" />
         </a>
 
@@ -16,8 +16,7 @@
             @for (link of navLinks; track link.name) {
             <div class="relative group">
                 @if (link.isDropdown) {
-                <div
-                    class="text-lg flex items-center gap-1 cursor-pointer py-2 font-medium text-black dark:text-white hover:text-primary transition-colors">
+                <div class="nav-link flex items-center gap-1 cursor-pointer py-2">
                     <span class="whitespace-nowrap">{{ link.name }}</span>
                     <lucide-icon [img]="ChevronDown" [size]="14"></lucide-icon>
 
@@ -35,7 +34,7 @@
                 </div>
                 } @else {
                 <a [routerLink]="link.path" routerLinkActive="text-primary" [routerLinkActiveOptions]="{ exact: true }"
-                    class="text-lg text-black dark:text-white hover:text-primary transition-colors whitespace-nowrap">
+                    class="nav-link">
 
                     {{ link.name }}
                 </a>
@@ -72,7 +71,7 @@
                 @if (link.isDropdown) {
                 <div class="flex flex-col">
                     <button (click)="toggleDropdown(link.name)"
-                        class="flex items-center justify-between w-full font-semibold text-black dark:text-white cursor-pointer">
+                        class="nav-link flex items-center justify-between w-full cursor-pointer">
                         {{ link.name }}
                         <lucide-icon [img]="ChevronDown" [size]="20" class="transition-transform"
                             [class.rotate-180]="openDropdown() === link.name"></lucide-icon>
@@ -91,8 +90,7 @@
                 </div>
                 } @else {
                 <a [routerLink]="link.path" (click)="closeMobileMenu()" routerLinkActive="text-primary font-semibold"
-                    [routerLinkActiveOptions]="{exact: true}"
-                    class="font-semibold text-black dark:text-white hover:underline transition-colors">
+                    [routerLinkActiveOptions]="{exact: true}" class="nav-link">
                     {{ link.name }}
                 </a>
                 }

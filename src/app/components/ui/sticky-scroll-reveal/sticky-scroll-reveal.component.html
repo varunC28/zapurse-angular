@@ -1,0 +1,50 @@
+<div class="h-[30rem] overflow-y-auto flex flex-col lg:flex-row justify-center relative space-y-10 lg:space-y-0 lg:space-x-10 rounded-md p-10 scroll-smooth no-scrollbar"
+    #scrollContainer [class]="contentClassName">
+
+    <div class="div relative flex items-start px-4 w-full lg:w-auto">
+        <div class="max-w-2xl">
+            @for (item of content; track item.title; let index = $index) {
+            <div class="my-20 content-block transition-opacity duration-500"
+                [style.opacity]="activeCard === index ? '1' : '0.3'">
+                <h3 class="mb-4">
+                    {{ item.title }}
+                </h3>
+                <p class="max-w-sm leading-relaxed font-bold">
+                    {{ item.description }}
+                </p>
+
+                <!-- Mobile Image -->
+                <div class="lg:hidden mt-6 w-full h-60 rounded-xl overflow-hidden shadow-lg"
+                    [style.background]="linearGradients[index % linearGradients.length]">
+                    @if (item.image) {
+                    <img [src]="item.image" [alt]="item.title" class="h-full w-full object-cover" />
+                    } @else {
+                    <div class="flex h-full w-full items-center justify-center text-white font-bold">
+                        {{ item.title }}
+                    </div>
+                    }
+                </div>
+            </div>
+            }
+            <div class="h-40"></div> <!-- Spacer for last item scroll -->
+        </div>
+    </div>
+
+    <div class="hidden lg:block h-90 w-90 rounded-2xl bg-white sticky top-10 overflow-hidden shadow-xl transition-colors duration-500"
+        [style.background]="linearGradients[activeCard % linearGradients.length]">
+
+        <div class="h-full w-full flex items-center justify-center text-white transition-opacity duration-300">
+            @if (content[activeCard].image) {
+            <img [src]="content[activeCard].image" [alt]="content[activeCard].title"
+                class="h-full w-full object-cover" />
+            } @else if (content[activeCard].content) {
+            <!-- If custom content/template is passed (future proofing) -->
+            <div class="p-4 text-center">{{ content[activeCard].title }} visual</div>
+            } @else {
+            <div class="flex h-full w-full items-center justify-center text-white">
+                No Visual
+            </div>
+            }
+        </div>
+    </div>
+</div>
