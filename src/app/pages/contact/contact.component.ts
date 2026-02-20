@@ -1,10 +1,9 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { LucideAngularModule, Mail, Phone, MapPin, Send, MessageSquare, ArrowRight } from 'lucide-angular';
 import { ParticlesComponent } from '../../components/ui/particles/particles.component';
 import { SuccessModalComponent } from '../../components/ui/success-modal/success-modal.component';
-import { signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-contact',
@@ -23,12 +22,13 @@ export class ContactComponent {
 
   showSuccessModal = signal(false);
 
-  onSubmit() {
+  onSubmit(form: NgForm) {
     this.showSuccessModal.set(true);
 
     // Auto-hide after 3 seconds
     setTimeout(() => {
       this.showSuccessModal.set(false);
+      form.resetForm();
     }, 3000);
   }
 
