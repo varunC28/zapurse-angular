@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { LucideAngularModule, Menu, X, ChevronDown, Phone } from 'lucide-angular';
 import { ThemeToggleComponent } from '../theme-toggle/theme-toggle.component';
+import { SmoothScrollService } from '../../../services/smooth-scroll.service';
 
 interface NavItem {
   name: string;
@@ -31,7 +32,10 @@ interface NavLink {
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private smoothScroll: SmoothScrollService
+  ) { }
 
   isScrolled = signal(false);
   mobileMenuOpen = signal(false);
@@ -83,9 +87,9 @@ export class NavbarComponent {
   }
 
   onLogoClick(event: MouseEvent) {
-    if (this.router.url === '/' || this.router.url === '/#') {
+    if (this.router.url === '/' || this.router.url === '/#' || this.router.url.includes('#hero')) {
       event.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      this.smoothScroll.scrollTo(0);
     }
   }
 }

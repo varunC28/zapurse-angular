@@ -3,6 +3,7 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { LucideAngularModule, ChevronUp } from 'lucide-angular';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { SmoothScrollService } from '../../../services/smooth-scroll.service';
 
 @Component({
   selector: 'app-scroll-to-top',
@@ -17,7 +18,8 @@ export class ScrollToTopComponent implements OnInit {
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
-    private router: Router
+    private router: Router,
+    private smoothScroll: SmoothScrollService
   ) { }
 
   ngOnInit() {
@@ -25,7 +27,8 @@ export class ScrollToTopComponent implements OnInit {
       this.router.events.pipe(
         filter(event => event instanceof NavigationEnd)
       ).subscribe(() => {
-        window.scrollTo(0, 0);
+        // Use immediate scroll for route changes
+        this.smoothScroll.scrollTo(0, { immediate: true });
       });
     }
   }
@@ -39,10 +42,7 @@ export class ScrollToTopComponent implements OnInit {
 
   scrollToTop() {
     if (isPlatformBrowser(this.platformId)) {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+      this.smoothScroll.scrollTo(0);
     }
   }
 }
