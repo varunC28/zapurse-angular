@@ -45,7 +45,7 @@
                         <ul class="space-y-2 list-none pl-0 mb-6">
                             @for (item of failedConditions; track item) {
                             <li class="flex items-center gap-2">
-                                <div class="w-1.5 h-1.5 rounded-full bg-gray-400"></div>
+                                <div class="w-1.5 h-1.5 rounded-full bg-black dark:bg-gray-400"></div>
                                 {{ item }}
                             </li>
                             }
@@ -54,7 +54,7 @@
                         <ul class="space-y-2 list-none pl-0">
                             @for (item of failedActions; track item) {
                             <li class="flex items-center gap-2">
-                                <div class="w-1.5 h-1.5 rounded-full bg-gray-400"></div>
+                                <div class="w-1.5 h-1.5 rounded-full bg-black dark:bg-gray-400"></div>
                                 {{ item }}
                             </li>
                             }
@@ -70,7 +70,7 @@
                         <ul class="space-y-3 list-none pl-0">
                             @for (item of pendingConditions; track item) {
                             <li class="flex gap-2">
-                                <div class="w-1.5 h-1.5 rounded-full bg-gray-400 mt-2"></div>
+                                <div class="w-1.5 h-1.5 rounded-full bg-black dark:bg-gray-400 mt-2"></div>
                                 {{ item }}
                             </li>
                             }
@@ -90,7 +90,7 @@
                     @for (item of exceptions; track item) {
                     <div
                         class="flex items-center gap-3 p-4 bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800">
-                        <div class="w-1 h-1 rounded-full bg-gray-400"></div>
+                        <div class="w-1 h-1 rounded-full bg-black dark:bg-gray-400"></div>
                         {{ item }}
                     </div>
                     }
@@ -125,7 +125,7 @@
                     <ul class="space-y-1 list-none pl-0 mb-6">
                         @for (item of supportRequirements; track item) {
                         <li class="flex items-center gap-2">
-                            <div class="w-1.5 h-1.5 rounded-full bg-gray-400"></div>
+                            <div class="w-1.5 h-1.5 rounded-full bg-black dark:bg-gray-400"></div>
                             {{ item }}
                         </li>
                         }

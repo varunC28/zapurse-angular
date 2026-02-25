@@ -2,6 +2,7 @@ import { Component, AfterViewInit, ElementRef, ViewChild, OnDestroy, Inject, PLA
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { gsap } from 'gsap';
 import { InteractiveGridPatternComponent } from '../../ui/interactive-grid-pattern/interactive-grid-pattern.component';
+import { SmoothScrollService } from '../../../services/smooth-scroll.service';
 
 @Component({
   selector: 'app-hero',
@@ -18,7 +19,10 @@ export class HeroComponent implements AfterViewInit, OnDestroy {
   private ctx: gsap.Context | undefined;
   private mouseMoveHandler: any;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private smoothScroll: SmoothScrollService
+  ) { }
 
   ngAfterViewInit() {
     if (isPlatformBrowser(this.platformId)) {
@@ -67,7 +71,7 @@ export class HeroComponent implements AfterViewInit, OnDestroy {
   }
 
   scrollToBottom() {
-    window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+    this.smoothScroll.scrollTo(window.innerHeight);
   }
 
   ngOnDestroy() {
