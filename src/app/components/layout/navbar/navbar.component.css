@@ -1,3 +1,155 @@
-.nav-link {
-    @apply text-lg font-medium text-black dark:text-white hover:text-primary transition-colors whitespace-nowrap;
+.navbar-wrapper {
+    position: relative;
+    z-index: 1000;
+}
+
+/* 1. Fixed Elements */
+.fixed-toggle {
+    position: fixed;
+    top: 1.5rem;
+    right: 2rem;
+    z-index: 1001;
+}
+
+/* 2. Integrated Logo within Pill */
+.pill-logo-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.pill-brand-logo {
+    height: 65px;
+    /* Smaller height for the pill */
+    width: auto;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.pill-logo-box:hover {
+    transform: scale(1.1);
+}
+
+/* 2. Floating Pill Nav */
+.floating-pill-nav {
+    position: fixed;
+    top: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pill-container {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+}
+
+:host-context(html.dark) .pill-container {
+    background: rgba(15, 23, 42, 0.6);
+    border-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.4);
+}
+
+.nav-scrolled .pill-container {
+    padding: 0.25rem 0.75rem;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.15);
+}
+
+:host-context(html.dark) .nav-scrolled .pill-container {
+    background: rgba(2, 6, 23, 0.9);
+}
+
+/* 3. Pill Links */
+.pill-nav-link {
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #0d1015;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+:host-context(html.dark) .pill-nav-link {
+    color: #f1f5f9;
+    /* Off-white for better visibility */
+}
+
+:host-context(html.dark) .pill-nav-link:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.active-pill {
+    background: #0f172a !important;
+    color: #ffffff !important;
+}
+
+:host-context(html.dark) .active-pill {
+    background: #10b981 !important;
+    color: #0f172a !important;
+    /* Dark text on bright background for readability */
+}
+
+:host-context(html.dark) .pill-container {
+    background: rgba(15, 23, 42, 0.85);
+    /* Slightly darker/more opaque */
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 4. Responsive adjustments */
+@media (max-width: 1024px) {
+    .fixed-logo {
+        left: 1rem;
+        top: 1rem;
+    }
+
+    .fixed-toggle {
+        right: 1rem;
+        top: 1rem;
+    }
+
+    .brand-logo {
+        height: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .floating-pill-nav {
+        top: auto;
+        margin-top: 25px;
+    }
+}
+
+
+/* 1. Base Mobile Link Style */
+.mobile-link {
+    color: #0f172a !important;
+    /* Dark color for light mode */
+    text-decoration: none;
+    /* font-weight: 700; */
+}
+
+/* 2. Dark Mode Base Color */
+:host-context(html.dark) .mobile-link {
+    color: #ffffff !important;
+    /* Force white in dark mode */
+}
+
+/* 4. Sub-links (Inside Dropdowns) */
+.mobile-sub-link {
+    color: #475569 !important;
+}
+
+:host-context(html.dark) .mobile-sub-link {
+    color: #94a3b8 !important;
 }

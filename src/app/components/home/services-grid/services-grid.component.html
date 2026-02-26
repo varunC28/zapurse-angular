@@ -1,4 +1,4 @@
-<section class="py-32 relative overflow-hidden" id="services">
+<section class="py-20 relative overflow-hidden" id="services">
     <app-particles className="absolute inset-0 z-0" [quantity]="100" [ease]="80" color="#cbd5e1"
         [refresh]="true"></app-particles>
     <div class="container mx-auto px-4 md:px-6 relative z-10">
@@ -12,10 +12,14 @@
         </div>
 
         <!-- Service Cards -->
+
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             @for (service of services; track service.id; let index = $index) {
-            <div class="relative overflow-hidden rounded-[2rem] p-10 bg-white/30 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-lg hover:shadow-xl transition-all duration-500 group animate-in fade-in slide-in-from-bottom-8 fill-mode-both"
+            <!-- 1. Added relative and rounded-32px to the beam container -->
+
+            <div class="relative h-full overflow-hidden rounded-[2rem] p-10 bg-white/30 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-lg hover:shadow-xl transition-all duration-500 group animate-in fade-in slide-in-from-bottom-8 fill-mode-both"
                 [style.animation-delay]="(index * 100) + 'ms'">
+
                 <!-- Background blur circle -->
                 <div
                     class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none">
@@ -31,7 +35,8 @@
                         </div>
 
                         <!-- Title & Description -->
-                        <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">{{ service.title }}</h4>
+                        <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">{{ service.title }}
+                        </h4>
                         <p class="text-gray-900 dark:text-gray-300 leading-relaxed">{{ service.description }}</p>
                     </div>
 
@@ -48,5 +53,7 @@
             </div>
             }
         </div>
+
+
     </div>
 </section>

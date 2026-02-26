@@ -1,21 +1,48 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
-import { ServicesComponent } from './pages/services/services.component';
-import { AboutComponent } from './pages/about/about.component';
-import { ContactComponent } from './pages/contact/contact.component';
-import { TermsComponent } from './pages/legal/terms/terms.component';
-import { PrivacyComponent } from './pages/legal/privacy/privacy.component';
-import { RefundComponent } from './pages/legal/refund/refund.component';
-import { FaqComponent } from './pages/legal/faq/faq.component';
 
 export const routes: Routes = [
-    { path: '', component: HomeComponent },
-    { path: 'services', component: ServicesComponent },
-    { path: 'about', component: AboutComponent },
-    { path: 'contact', component: ContactComponent },
-    { path: 'legal/terms', component: TermsComponent },
-    { path: 'legal/privacy', component: PrivacyComponent },
-    { path: 'legal/refund', component: RefundComponent },
-    { path: 'legal/faq', component: FaqComponent },
-    { path: '**', redirectTo: '' }
+    {
+        path: '',
+        loadComponent: () => import('./pages/home-page/home.component').then(m => m.HomeComponent)
+    },
+    {
+        path: 'services',
+        loadComponent: () => import('./pages/service-page/services.component').then(m => m.ServicesComponent)
+    },
+    {
+        path: 'about',
+        loadComponent: () => import('./pages/about-page/about.component').then(m => m.AboutComponent)
+    },
+    {
+        path: 'contact',
+        loadComponent: () => import('./pages/contact-page/contact.component').then(m => m.ContactComponent)
+    },
+    {
+        path: 'legal/terms',
+        loadComponent: () => import('./pages/legal/terms/terms.component').then(m => m.TermsComponent)
+    },
+    {
+        path: 'legal/privacy',
+        loadComponent: () => import('./pages/legal/privacy/privacy.component').then(m => m.PrivacyComponent)
+    },
+    {
+        path: 'legal/refund',
+        loadComponent: () => import('./pages/legal/refund/refund.component').then(m => m.RefundComponent)
+    },
+    {
+        path: 'legal/faq',
+        loadComponent: () => import('./pages/legal/faq/faq.component').then(m => m.FaqComponent)
+    },
+    {
+        path: 'blog',
+        loadComponent: () => import('./pages/blog-page/blog-page.component').then(m => m.BlogPageComponent)
+    },
+    {
+        path: 'blog/:slug',
+        loadComponent: () => import('./pages/blog-detail-page/blog-detail-page.component').then(m => m.BlogDetailPageComponent)
+    },
+    {
+        path: '**',
+        redirectTo: ''
+    }
 ];

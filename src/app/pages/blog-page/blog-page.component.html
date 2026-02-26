@@ -1,0 +1,107 @@
+<div class="pt-32 min-h-screen pb-20 bg-transparent overflow-hidden relative">
+    <app-particles className="absolute inset-0 z-0" [quantity]="120" [ease]="80" color="#cbd5e1"
+        [refresh]="true"></app-particles>
+
+    <div class="container mx-auto px-4 md:px-6 relative z-10">
+        <!-- Header -->
+        <div class="text-center max-w-3xl mx-auto mb-20 animate-in fade-in slide-in-from-bottom-8 duration-700">
+            <h1 class="font-black mb-6">Zapurse Blog</h1>
+            <p class="leading-relaxed">
+                Discover insights, news, and updates from the world of fintech.
+            </p>
+        </div>
+
+        <div
+            class="flex justify-center items-center w-full animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-200 fill-mode-both">
+            <om-bento-grid [columns]="columns" [colPattern]="colPattern">
+
+                <!-- Blog 1 -->
+                <om-bento-item [rows]="1" [cols]="1" [color]="'#f3f4f6'" style="cursor: pointer;">
+                    <ng-template #bentoBg>
+                        <div [routerLink]="['/blog', 'the-future-of-rural-banking']" class="h-full w-full">
+                            <app-blog-card-background-aurora>
+                                <div class=" blog-content justify-end">
+                                    <h2 class="text-3xl font-black">The Future of Rural Banking</h2>
+                                    <p>How Zapurse is bridging the gap between urban and rural India with cutting-edge
+                                        technology.
+                                    </p>
+                                </div>
+                            </app-blog-card-background-aurora>
+                        </div>
+                    </ng-template>
+                </om-bento-item>
+
+                <!-- Blog 2 -->
+                <om-bento-item [rows]="1" [cols]="1" [color]="'#f3f4f6'" style="cursor: pointer;">
+                    <ng-template #bentoBg>
+                        <div [routerLink]="['/blog', 'zero-fees']" class="h-full w-full">
+                            <app-blog-card-background>
+                                <div class="blog-content justify-center">
+                                    <h3 class="font-bold">Zero Fees</h3>
+                                    <p class="text-sm">Why we choose transparency over convenience fees.</p>
+                                </div>
+                            </app-blog-card-background>
+                        </div>
+                    </ng-template>
+                </om-bento-item>
+
+                <!-- Blog 3 -->
+                <om-bento-item [rows]="1" [cols]="1" [color]="'#f3f4f6'" style="cursor: pointer;">
+                    <ng-template #bentoBg>
+                        <div [routerLink]="['/blog', 'instant-cashback']" class="h-full w-full">
+                            <app-blog-card-background-aurora>
+                                <div class="blog-content justify-center">
+                                    <h3 class="font-bold">Instant Cashback</h3>
+                                    <p class="text-sm">Get rewards every time you recharge with Zapurse.</p>
+                                </div>
+                            </app-blog-card-background-aurora>
+                        </div>
+                    </ng-template>
+                </om-bento-item>
+
+                <!-- Blog 4 -->
+                <om-bento-item [rows]="2" [cols]="1" [color]="'#f3f4f6'" style="cursor: pointer;">
+                    <ng-template #bentoBg>
+                        <div [routerLink]="['/blog', 'secure-transactions']" class="h-full w-full">
+                            <app-blog-card-background>
+                                <div class="blog-content">
+                                    <h2 class="text-3xl font-black">Secure Transactions</h2>
+                                    <p>Learn about our 100% safe protocols for your financial peace of mind.</p>
+                                </div>
+                            </app-blog-card-background>
+                        </div>
+                    </ng-template>
+                </om-bento-item>
+
+                <!-- Blog 5 -->
+                <om-bento-item [rows]="2" [cols]="1" [color]="'#f3f4f6'" style="cursor: pointer;">
+                    <ng-template #bentoBg>
+                        <div [routerLink]="['/blog', 'top-10-multi-recharge-company-in-india']" class="h-full w-full">
+                            <app-blog-card-background-aurora>
+                                <div class="blog-content">
+                                    <h2 class="text-3xl font-black">Top 10 multi recharge company in India</h2>
+                                    <p>Learn about top 10 multi recharge company in India</p>
+                                </div>
+                            </app-blog-card-background-aurora>
+                        </div>
+                    </ng-template>
+                </om-bento-item>
+
+                <!-- Blog 6 -->
+                <om-bento-item [rows]="2" [cols]="2" [color]="'#f3f4f6'" style="cursor: pointer;">
+                    <ng-template #bentoBg>
+                        <div [routerLink]="['/blog', 'online-prepaid-mobile-recharge']" class="h-full w-full">
+                            <app-blog-card-background>
+                                <div class="blog-content">
+                                    <h2 class="text-3xl font-black">Online Prepaid Mobile Recharge</h2>
+                                    <p>Learn about online prepaid mobile recharge</p>
+                                </div>
+                            </app-blog-card-background>
+                        </div>
+                    </ng-template>
+                </om-bento-item>
+
+            </om-bento-grid>
+        </div>
+    </div>
+</div>

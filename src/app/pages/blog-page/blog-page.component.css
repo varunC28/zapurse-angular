@@ -1,0 +1,53 @@
+/* 1. Global Bento Grid Overrides */
+:host ::ng-deep .om-bento-item {
+    padding: 0 !important;
+}
+
+:host ::ng-deep .om-bento-foreground {
+    display: none !important;
+}
+
+/* 2. Blog Card Content Wrapper */
+.blog-content {
+    height: 100%;
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 10;
+}
+
+/* 3. Alignment Utilities */
+.blog-content.justify-end {
+    justify-content: flex-end;
+}
+
+.blog-content.justify-center {
+    justify-content: center;
+}
+
+/* 4. Default Text Styling (White/Dark-Veil) */
+.blog-content h2,
+.blog-content h3 {
+    margin-bottom: 0.5rem !important;
+    color: white !important;
+    background: none !important;
+    -webkit-text-fill-color: white !important;
+    background-clip: unset !important;
+}
+
+.blog-content p {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* 5. Aurora Light Mode Specific Overrides */
+:host-context(html:not(.dark)) app-blog-card-background-aurora .blog-content h2,
+:host-context(html:not(.dark)) app-blog-card-background-aurora .blog-content h3 {
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+}
+
+:host-context(html:not(.dark)) app-blog-card-background-aurora .blog-content p {
+    color: #000000 !important;
+}

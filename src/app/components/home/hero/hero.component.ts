@@ -2,7 +2,7 @@ import { Component, AfterViewInit, ElementRef, ViewChild, OnDestroy, Inject, PLA
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { gsap } from 'gsap';
 import { InteractiveGridPatternComponent } from '../../ui/interactive-grid-pattern/interactive-grid-pattern.component';
-import { SmoothScrollService } from '../../../services/smooth-scroll.service';
+import { SmoothScrollService } from '../../layout/smooth-scroll/smooth-scroll.service';
 
 @Component({
   selector: 'app-hero',

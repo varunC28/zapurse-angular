@@ -16,20 +16,20 @@ export class PartnersAndTestimonialsComponent {
   testimonials = [
     {
       name: "Rajesh Kumar",
-      role: "Retailer, Jaipur",
-      text: "Zapurse has completely transformed my shop. The recharge success rate is much higher than other portals I've used. Highly recommended!",
+      role: "Jaipur",
+      text: "Great digital payment services in india, they take no commisions and also offer discounts on recharges. Highly recommended!",
       rating: 5
     },
     {
       name: "Amit Singh",
-      role: "Distributor, Bhopal",
-      text: "Excellent support and timely commission payouts. Working with Zapurse is transparent and profitable.",
+      role: "Bhopal",
+      text: "Excellent support. Now I've been using Zapurse for past 5 months and I get offers everytime.",
       rating: 5
     },
     {
       name: "Sneha Gupta",
-      role: "Merchant, Delhi",
-      text: "The interface is so easy to use. My staff learned it in one day. DTH recharge is super fast.",
+      role: "Delhi",
+      text: "The interface is so easy to use. We can get recharge done in under 30 seconds. Best payment solution for online payments india",
       rating: 4
     }
   ];

@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { LucideAngularModule, Menu, X, ChevronDown, Phone } from 'lucide-angular';
 import { ThemeToggleComponent } from '../theme-toggle/theme-toggle.component';
-import { SmoothScrollService } from '../../../services/smooth-scroll.service';
+import { SmoothScrollService } from '../smooth-scroll/smooth-scroll.service';
+import { PageBackgroundComponent } from '../page-background/page-background.component';
 
 interface NavItem {
   name: string;
@@ -26,7 +27,7 @@ interface NavLink {
     RouterLink,
     RouterLinkActive,
     LucideAngularModule,
-    ThemeToggleComponent
+    ThemeToggleComponent, PageBackgroundComponent
   ],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
@@ -61,6 +62,7 @@ export class NavbarComponent {
     },
     { name: 'About Us', path: '/about' },
     { name: 'Contact', path: '/contact' },
+    { name: 'Blog', path: '/blog' }
   ];
 
   @HostListener('window:scroll', [])

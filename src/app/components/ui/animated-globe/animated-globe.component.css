@@ -1,0 +1,9 @@
+/* Enable interaction and set cursor */
+om-globe {
+    pointer-events: auto !important;
+    cursor: grab;
+}
+
+om-globe:active {
+    cursor: grabbing;
+}

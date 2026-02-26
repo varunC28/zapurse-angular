@@ -7,25 +7,36 @@
     <div class="container mx-auto px-4 md:px-6 relative z-10">
 
         <!-- Hero -->
-        <section class="relative py-24 bg-white/30 dark:bg-gray-900 overflow-hidden rounded-[3rem] mb-16 shadow-2xl">
-            <div
-                class="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2">
-            </div>
-            <div class="relative z-10 text-center max-w-4xl mx-auto">
+        <section
+            class="relative py-10 bg-white/30 dark:bg-gray-900 overflow-hidden rounded-[3rem] mb-16 shadow-2xl min-h-[550px] flex flex-col items-center justify-start">
+
+            <!-- Content Overlay: pointer-events-none lets mouse clicks "pass through" to the globe -->
+            <div class="relative z-20 text-center max-w-4xl mx-auto px-6 pt-10 pointer-events-none">
                 <div class="animate-in fade-in slide-in-from-bottom-8 duration-700">
-                    <h2 class="font-black mb-6">
+                    <h2 class="text-4xl md:text-6xl font-black mb-6 text-gray-900 dark:text-white drop-shadow-lg">
                         Empowering Every Indian with Digital Freedom
                     </h2>
-                    <p class="leading-relaxed">
+                    <p
+                        class="text-lg md:text-xl leading-relaxed text-gray-700 dark:text-gray-200 font-medium drop-shadow-md">
                         Zapurse, the digital arm of Atishay Limited, is bridging the divide by bringing essential
                         banking to the last mile.
                     </p>
                 </div>
             </div>
+
+            <!-- Globe Container: pointer-events-auto makes it interactive -->
+            <div class="absolute w-full h-full left-0 top-0 z-10 pointer-events-auto flex items-center justify-center">
+                <div
+                    class="absolute left-1/2 -translate-x-1/2 top-[60%] md:top-[45%] w-[500px] h-[500px] md:w-[700px] md:h-[700px]">
+                    <om-globe class="w-full h-full opacity-80 globe-theme-sync"></om-globe>
+                </div>
+            </div>
+
         </section>
 
+
         <!-- Stats -->
-        <section class="py-20 border-b border-gray-200 dark:border-gray-700">
+        <section class="py-10 border-b border-gray-200 dark:border-gray-700">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
                 @for (stat of stats; track stat.label; let index = $index) {
                 <div class="animate-in fade-in zoom-in-95 fill-mode-both duration-700"
@@ -44,7 +55,7 @@
         </section>
 
         <!-- Mission & Vision -->
-        <section class="py-32">
+        <section class="md:py-20 py-10">
             <div class="grid lg:grid-cols-2 gap-20 items-start">
 
                 <!-- Left -->

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { LucideAngularModule, Smartphone, Banknote, ArrowUpRight } from 'lucide-angular';
 import { ParticlesComponent } from '../../ui/particles/particles.component';
+import { NgxBorderBeamComponent } from '@omnedia/ngx-border-beam';
 
 @Component({
   selector: 'app-services-grid',

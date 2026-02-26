@@ -32,7 +32,7 @@ export class ServicesComponent {
       description: 'Seamless DTH recharges for Tata Play, Dish TV, Videocon d2h, Sun Direct, and Airtel Digital TV.',
       features: ['All providers supported', 'Instant activation', 'Best commissions'],
       icon: Monitor,
-      color: 'bg-[#738233]',
+      color: 'bg-[#4ade80]',
       videoSrc: 'assets/DTH Recharge Video.mp4'
     },
   ];
