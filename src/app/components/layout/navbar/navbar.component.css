@@ -24,7 +24,7 @@
 .pill-brand-logo {
     height: 60px;
     width: auto;
-    min-width: 40px;
+    min-width: 60px;
     /* Ensure logo doesn't disappear */
     object-fit: contain;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
@@ -62,7 +62,7 @@
 
 @media (min-width: 1024px) {
     .pill-container {
-        padding: 0.75rem 2.5rem;
+        padding: 0.75rem 2rem;
         /* Increased width/padding for laptops */
     }
 }

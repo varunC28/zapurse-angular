@@ -1,0 +1,14 @@
+.footer-link {
+    text-decoration: none;
+    position: relative;
+}
+
+.footer-link:hover {
+    color: #1048b9;
+    /* Secondary color for hover contrast */
+}
+
+:host-context(html.dark) .footer-link:hover {
+    color: #34d399;
+    /* Brighter on dark mode */
+}

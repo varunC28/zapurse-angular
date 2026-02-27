@@ -150,13 +150,11 @@
 .narrative-content h3 {
     font-size: 1.75rem;
     font-weight: 800;
-    color: #fff;
     margin-bottom: 1rem;
 }
 
 .narrative-content p {
     font-size: 1rem;
-    color: rgba(255, 255, 255, 0.8);
 }
 
 /* Floating Action Bar */

@@ -17,7 +17,7 @@
                 <div class="lg:hidden mt-6 w-full h-72 rounded-xl overflow-hidden shadow-lg p-2"
                     [style.background]="linearGradients[index % linearGradients.length]">
                     @if (item.image) {
-                    <img [src]="item.image" [alt]="item.title" class="h-full w-full object-contain" />
+                    <img [src]="item.image" [alt]="item.title" class="h-full w-full border-2 border-white " />
                     } @else {
                     <div class="flex h-full w-full items-center justify-center text-white font-bold text-2xl">
                         {{ item.title }}
