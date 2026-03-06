@@ -14,7 +14,7 @@
         <!-- Hero Section -->
         <div class="max-w-4xl mx-auto mb-20 text-center animate-in fade-in slide-in-from-bottom-8 duration-700">
             <div
-                class="w-20 h-20 rounded-2xl bg-[#217095] flex items-center justify-center text-white mx-auto mb-8 shadow-lg shadow-[#217095]/20">
+                class="w-20 h-20 rounded-2xl bg-blue-500/10 dark:bg-blue-500/20 flex items-center justify-center text-blue-600 dark:text-blue-400 mx-auto mb-8 shadow-sm">
                 <lucide-icon [img]="Smartphone" [size]="48"></lucide-icon>
             </div>
             <h1 class="mb-6">Quick and Reliable Method to Do Prepaid Mobile Recharge Online</h1>
@@ -29,7 +29,7 @@
 
             <!-- Fast Platform -->
             <section
-                class="bg-white/30 dark:bg-gray-900/50 backdrop-blur-xl border border-white/20 dark:border-gray-800 p-8 md:p-12 rounded-[2.5rem] shadow-xl animate-in fade-in slide-in-from-bottom-8 duration-700 delay-100 fill-mode-both">
+                class="bg-white/30 dark:bg-gray-900 border p-8 md:p-12 rounded-[2.5rem] shadow-sm hover:shadow-lg transition-all duration-300 animate-in fade-in slide-in-from-bottom-8 delay-100 fill-mode-both">
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div>
                         <h2 class="mb-6">A Fast Mobile Recharge
@@ -39,18 +39,19 @@
                             interruptions. Zapurse is an excellent choice for a fast and reliable mobile recharge
                             solution. All requests are processed quickly, and you're notified immediately upon success.
                         </p>
-                        <div class="flex items-center gap-4 text-[#217095] font-semibold">
+                        <div class="flex items-center gap-4 text-blue-600 dark:text-blue-400 font-semibold">
                             <lucide-icon [img]="Zap" [size]="24"></lucide-icon>
                             <span>Instant processing, minimal delays</span>
                         </div>
                     </div>
                     <div
-                        class="bg-gradient-to-br from-[#217095]/10 to-[#217095]/20 rounded-3xl p-8 aspect-video flex items-center justify-center border border-[#217095]/10">
+                        class="bg-blue-500/10 dark:bg-blue-500/20 rounded-3xl p-8 aspect-video flex items-center justify-center border border-blue-500/20">
                         <img src="assets/Phone Recharge Video.mp4" class="hidden" alt="Placeholder">
                         <div class="text-center">
                             <lucide-icon [img]="Smartphone" [size]="64"
-                                class="text-[#217095] mb-4 mx-auto"></lucide-icon>
-                            <span class="text-sm font-medium text-[#217095]/60 uppercase tracking-widest">Mobile
+                                class="text-blue-600 dark:text-blue-400 mb-4 mx-auto"></lucide-icon>
+                            <span
+                                class="text-sm font-medium text-blue-600/60 dark:text-blue-400/60 uppercase tracking-widest">Mobile
                                 Solutions</span>
                         </div>
                     </div>
@@ -61,12 +62,12 @@
             <div class="grid md:grid-cols-2 gap-8">
                 <!-- Steps -->
                 <div
-                    class="bg-white/30 dark:bg-gray-900/50 backdrop-blur-xl border border-white/20 dark:border-gray-800 p-8 rounded-[2.5rem] shadow-lg animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200 fill-mode-both">
+                    class="bg-white/30 dark:bg-gray-900 border p-8 rounded-[2.5rem] shadow-sm hover:shadow-lg transition-all duration-300 animate-in fade-in slide-in-from-bottom-8 delay-200 fill-mode-both">
                     <h3 class="mb-8">Simple Steps for Online Recharge</h3>
                     <ul class="space-y-6">
                         <li *ngFor="let step of rechargeSteps; let i = index" class="flex gap-4">
                             <span
-                                class="flex-shrink-0 w-8 h-8 rounded-full bg-[#217095] text-white flex items-center justify-center font-bold text-sm">
+                                class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-500/10 dark:bg-blue-500/20 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold text-sm">
                                 {{i + 1}}
                             </span>
                             <p class="text-gray-700 dark:text-gray-300 pt-1 leading-snug">{{step.text}}</p>
@@ -76,7 +77,7 @@
 
                 <!-- Extra Charges -->
                 <div
-                    class="bg-white/30 dark:bg-gray-900/50 backdrop-blur-xl border border-white/20 dark:border-gray-800 p-8 rounded-[2.5rem] shadow-lg animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300 fill-mode-both">
+                    class="bg-white/30 dark:bg-gray-900 border p-8 rounded-[2.5rem] shadow-sm hover:shadow-lg transition-all duration-300 animate-in fade-in slide-in-from-bottom-8 delay-300 fill-mode-both">
                     <div
                         class="w-12 h-12 rounded-xl bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 flex items-center justify-center mb-6">
                         <lucide-icon [img]="Wallet" [size]="28"></lucide-icon>
@@ -87,8 +88,7 @@
                         approach. You pay only the recharge amount. Clear, transparent pricing helps you manage your
                         budget better.
                     </p>
-                    <div
-                        class="p-4 bg-orange-50 dark:bg-orange-900/10 rounded-2xl border border-orange-100 dark:border-orange-900/20">
+                    <div class="p-4 bg-orange-500/10 dark:bg-orange-500/20 rounded-2xl border border-orange-500/20">
                         <p class="text-sm text-orange-800 dark:text-orange-300 font-medium">
                             Save ₹11 instantly on your first recharge and ₹2–3 on subsequent recharges!
                         </p>
@@ -98,9 +98,10 @@
 
             <!-- Security Section -->
             <section
-                class="bg-white/30 dark:bg-gray-900/50 backdrop-blur-xl border border-white/20 dark:border-gray-800 p-8 md:p-12 rounded-[2.5rem] shadow-xl animate-in fade-in slide-in-from-bottom-8 duration-700 delay-400 fill-mode-both">
+                class="bg-white/30 dark:bg-gray-900 border p-8 md:p-12 rounded-[2.5rem] shadow-sm hover:shadow-lg transition-all duration-300 animate-in fade-in slide-in-from-bottom-8 delay-400 fill-mode-both">
                 <div class="text-center max-w-3xl mx-auto">
-                    <lucide-icon [img]="ShieldCheck" [size]="56" class="text-green-500 mb-6 mx-auto"></lucide-icon>
+                    <lucide-icon [img]="ShieldCheck" [size]="56"
+                        class="text-green-600 dark:text-green-400 mb-6 mx-auto"></lucide-icon>
                     <h2 class="mb-6">Safe and Secure Transactions</h2>
                     <p class="mb-6">
                         All payments are completed through secure and verified systems. We use modern encryption and
@@ -114,13 +115,13 @@
 
         <!-- Call to Action / App Download -->
         <div
-            class="mt-20 max-w-4xl mx-auto p-10 rounded-[3rem] bg-gradient-to-br from-[#217095] to-[#1a5a78] text-white shadow-2xl relative overflow-hidden animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-500 fill-mode-both">
-            <div class="absolute top-0 right-0 p-8 opacity-10">
+            class="mt-20 max-w-4xl mx-auto p-10 rounded-[3rem] bg-white/30 dark:bg-gray-900 border shadow-sm hover:shadow-lg transition-all duration-500 relative overflow-hidden animate-in fade-in slide-in-from-bottom-12 delay-500 fill-mode-both">
+            <div class="absolute top-0 right-0 p-8 opacity-5 dark:opacity-10 text-blue-600 dark:text-blue-400">
                 <lucide-icon [img]="Smartphone" [size]="200"></lucide-icon>
             </div>
             <div class="relative z-10 text-center">
-                <h3 class="mb-6 text-white dark:text-white">Stay Connected Anywhere</h3>
-                <p class="mb-10 max-w-2xl mx-auto text-blue-100 dark:text-blue-100">
+                <h3 class="mb-6 font-black">Stay Connected Anywhere</h3>
+                <p class="mb-10 max-w-2xl mx-auto">
                     Download the Zapurse app for the fastest mobile recharge experience. No more searching for local
                     shops!
                 </p>
