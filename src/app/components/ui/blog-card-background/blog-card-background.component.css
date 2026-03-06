@@ -1,0 +1,19 @@
+:host {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+::ng-deep om-dark-veil {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Ensure the canvas or internal container from the library also fills the space */
+::ng-deep .om-dark-veil-container,
+::ng-deep om-dark-veil>div {
+    width: 100% !important;
+    height: 100% !important;
+}

@@ -1,0 +1,140 @@
+<div class="pt-32 min-h-screen pb-20 bg-transparent transition-colors overflow-hidden relative">
+    <app-particles className="absolute inset-0 z-0" [quantity]="120" [ease]="80" color="#cbd5e1"
+        [refresh]="true"></app-particles>
+
+    <div class="container mx-auto px-4 md:px-6 relative z-10">
+        <!-- Back Button -->
+        <a routerLink="/services"
+            class="inline-flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-primary transition-colors mb-8 group">
+            <lucide-icon [img]="ArrowLeft" [size]="20"
+                class="group-hover:-translate-x-1 transition-transform"></lucide-icon>
+            <span>Back to Services</span>
+        </a>
+
+        <!-- Hero Section -->
+        <div class="max-w-4xl mx-auto mb-20 text-center animate-in fade-in slide-in-from-bottom-8 duration-700">
+            <div
+                class="w-20 h-20 rounded-2xl bg-blue-500/10 dark:bg-blue-500/20 flex items-center justify-center text-blue-600 dark:text-blue-400 mx-auto mb-8 shadow-sm">
+                <lucide-icon [img]="Smartphone" [size]="48"></lucide-icon>
+            </div>
+            <h1 class="mb-6">Quick and Reliable Method to Do Prepaid Mobile Recharge Online</h1>
+            <p class="mb-6">
+                With Zapurse, recharging your mobile phone is made easy and hassle-free. Our online solution allows you
+                to recharge your phone quickly and with confidence, prioritizing simplicity, transparency, and security.
+            </p>
+        </div>
+
+        <!-- Content Sections -->
+        <div class="grid gap-12 max-w-5xl mx-auto">
+
+            <!-- Fast Platform -->
+            <section
+                class="bg-white/30 dark:bg-gray-900 border p-8 md:p-12 rounded-[2.5rem] shadow-sm hover:shadow-lg transition-all duration-300 animate-in fade-in slide-in-from-bottom-8 delay-100 fill-mode-both">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="mb-6">A Fast Mobile Recharge
+                            Platform India Users Can Depend On</h2>
+                        <p class="mb-6">
+                            Customers expect recharges to be processed right away to maintain service without
+                            interruptions. Zapurse is an excellent choice for a fast and reliable mobile recharge
+                            solution. All requests are processed quickly, and you're notified immediately upon success.
+                        </p>
+                        <div class="flex items-center gap-4 text-blue-600 dark:text-blue-400 font-semibold">
+                            <lucide-icon [img]="Zap" [size]="24"></lucide-icon>
+                            <span>Instant processing, minimal delays</span>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-blue-500/10 dark:bg-blue-500/20 rounded-3xl p-8 aspect-video flex items-center justify-center border border-blue-500/20">
+                        <img src="assets/Phone Recharge Video.mp4" class="hidden" alt="Placeholder">
+                        <div class="text-center">
+                            <lucide-icon [img]="Smartphone" [size]="64"
+                                class="text-blue-600 dark:text-blue-400 mb-4 mx-auto"></lucide-icon>
+                            <span
+                                class="text-sm font-medium text-blue-600/60 dark:text-blue-400/60 uppercase tracking-widest">Mobile
+                                Solutions</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Steps and Convenience -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Steps -->
+                <div
+                    class="bg-white/30 dark:bg-gray-900 border p-8 rounded-[2.5rem] shadow-sm hover:shadow-lg transition-all duration-300 animate-in fade-in slide-in-from-bottom-8 delay-200 fill-mode-both">
+                    <h3 class="mb-8">Simple Steps for Online Recharge</h3>
+                    <ul class="space-y-6">
+                        <li *ngFor="let step of rechargeSteps; let i = index" class="flex gap-4">
+                            <span
+                                class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-500/10 dark:bg-blue-500/20 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold text-sm">
+                                {{i + 1}}
+                            </span>
+                            <p class="text-gray-700 dark:text-gray-300 pt-1 leading-snug">{{step.text}}</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Extra Charges -->
+                <div
+                    class="bg-white/30 dark:bg-gray-900 border p-8 rounded-[2.5rem] shadow-sm hover:shadow-lg transition-all duration-300 animate-in fade-in slide-in-from-bottom-8 delay-300 fill-mode-both">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 flex items-center justify-center mb-6">
+                        <lucide-icon [img]="Wallet" [size]="28"></lucide-icon>
+                    </div>
+                    <h3 class="mb-4">No Extra or Hidden Charges</h3>
+                    <p class="mb-6">
+                        Unlike many platforms that add "service" or "convenience" fees, Zapurse takes a straightforward
+                        approach. You pay only the recharge amount. Clear, transparent pricing helps you manage your
+                        budget better.
+                    </p>
+                    <div class="p-4 bg-orange-500/10 dark:bg-orange-500/20 rounded-2xl border border-orange-500/20">
+                        <p class="text-sm text-orange-800 dark:text-orange-300 font-medium">
+                            Save ₹11 instantly on your first recharge and ₹2–3 on subsequent recharges!
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Security Section -->
+            <section
+                class="bg-white/30 dark:bg-gray-900 border p-8 md:p-12 rounded-[2.5rem] shadow-sm hover:shadow-lg transition-all duration-300 animate-in fade-in slide-in-from-bottom-8 delay-400 fill-mode-both">
+                <div class="text-center max-w-3xl mx-auto">
+                    <lucide-icon [img]="ShieldCheck" [size]="56"
+                        class="text-green-600 dark:text-green-400 mb-6 mx-auto"></lucide-icon>
+                    <h2 class="mb-6">Safe and Secure Transactions</h2>
+                    <p class="mb-6">
+                        All payments are completed through secure and verified systems. We use modern encryption and
+                        regular system monitoring to protect your financial information, ensuring you can recharge
+                        anywhere, anytime, with total peace of mind.
+                    </p>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Call to Action / App Download -->
+        <div
+            class="mt-20 max-w-4xl mx-auto p-10 rounded-[3rem] bg-white/30 dark:bg-gray-900 border shadow-sm hover:shadow-lg transition-all duration-500 relative overflow-hidden animate-in fade-in slide-in-from-bottom-12 delay-500 fill-mode-both">
+            <div class="relative z-10 text-center">
+                <h3 class="mb-6 font-black">Stay Connected Anywhere</h3>
+                <p class="mb-10 max-w-2xl mx-auto">
+                    Download the Zapurse app for the fastest mobile recharge experience. No more searching for local
+                    shops!
+                </p>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="https://play.google.com/store/apps/details?id=com.zapurse.zapurse" target="_blank"
+                        class="transition-transform hover:scale-105">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                            alt="Google Play" class="h-16">
+                    </a>
+                    <a href="https://apps.apple.com/in/app/zapurse-recharge/id6751755861" target="_blank"
+                        class="transition-transform hover:scale-105">
+                        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                            alt="App Store" class="h-16">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

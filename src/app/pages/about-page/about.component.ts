@@ -1,13 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LucideAngularModule, Target, Eye, Globe2, Trophy, ShieldCheck, MapPin } from 'lucide-angular';
 import { ParticlesComponent } from '../../components/ui/particles/particles.component';
-import { NumberTickerComponent } from '../../components/magicui/number-ticker/number-ticker.component';
+import { NumberTickerComponent } from '../../components/ui/number-ticker/number-ticker.component';
+import { NgxGlobeComponent } from '@omnedia/ngx-globe';
 
 @Component({
   selector: 'app-about',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   standalone: true,
-  imports: [CommonModule, LucideAngularModule, ParticlesComponent, NumberTickerComponent],
+  imports: [CommonModule, LucideAngularModule, ParticlesComponent, NumberTickerComponent, NgxGlobeComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css'
 })

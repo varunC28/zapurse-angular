@@ -1,0 +1,115 @@
+<main class="pdp-container">
+    <!-- 1. The Hero Entry -->
+    <section class="hero-section split-screen">
+        <div class="hero-image">
+            <div class="image-wrapper">
+                <div class="hero-vignette"></div>
+                <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=2070&auto=format&fit=crop"
+                    alt="Digital Recharge Narrative">
+            </div>
+        </div>
+        <div class="hero-content">
+            <h1 class="soft-rise heading-gradient">{{ blogTitle }}</h1>
+            <p class="soft-rise">Experience the next evolution of digital recharge with Zapurse—where every transaction
+                tells a story of speed, safety, and rural empowerment.</p>
+        </div>
+    </section>
+
+    <!-- 2. Scrollytelling & Flow -->
+    <section class="narrative-section">
+        <div class="container mx-auto px-4">
+            <div class="text-block max-w-3xl">
+                <h2 class="stagger heading-gradient">The Future of Rural Banking</h2>
+                <p class="stagger">How Zapurse is bridging the gap between urban and rural India with cutting-edge
+                    technology. We believe in financial inclusion for every citizen, ensuring that distance is never a
+                    barrier to progress.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="narrative-section">
+        <div class="container mx-auto px-4">
+            <div class="text-block max-w-3xl ml-auto">
+                <h2 class="stagger heading-gradient">Uncompromising Security</h2>
+                <p class="stagger">Our 100% safe protocols are designed for your financial peace of mind. With
+                    end-to-end encryption and real-time fraud detection, your digital assets have never been safer.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Bento Grid Specifications -->
+    <section class="bento-grid-section py-24">
+        <div class="container mx-auto px-4">
+            <h2 class="text-center mb-16">Core Features</h2>
+            <div style="display: flex; justify-content: center; align-items: center; width: 100%;">
+                <om-bento-grid [columns]="columns" [colPattern]="colPattern">
+                    <om-bento-item [rows]="1" [cols]="1" [color]="'#ffffff10'" class="bento-grid-item">
+                        <ng-template #bentoBg>
+                            <div class="bento-inner glass">
+                                <h3>Instant Cashback</h3>
+                                <p>Get rewards every time you recharge.</p>
+                            </div>
+                        </ng-template>
+                    </om-bento-item>
+                    <om-bento-item [rows]="1" [cols]="2" [color]="'#ffffff10'" class="bento-grid-item">
+                        <ng-template #bentoBg>
+                            <div class="bento-inner glass">
+                                <h3>Zero Fees</h3>
+                                <p>Transparency over convenience fees, always.</p>
+                            </div>
+                        </ng-template>
+                    </om-bento-item>
+                    <om-bento-item [rows]="2" [cols]="1" [color]="'#ffffff10'" class="bento-grid-item">
+                        <ng-template #bentoBg>
+                            <div class="bento-inner glass">
+                                <h3>24/7 Support</h3>
+                                <p>Our dedicated team is always here for you.</p>
+                            </div>
+                        </ng-template>
+                    </om-bento-item>
+                    <om-bento-item [rows]="1" [cols]="1" [color]="'#ffffff10'" class="bento-grid-item">
+                        <ng-template #bentoBg>
+                            <div class="bento-inner glass">
+                                <h3>Multi-Provider</h3>
+                                <p>Support for all major telecom operators.</p>
+                            </div>
+                        </ng-template>
+                    </om-bento-item>
+                </om-bento-grid>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Creative Seamlessness / Related Content -->
+    <section class="related-section py-24">
+        <div class="container mx-auto px-4">
+            <h2 class="mb-12">Continue the Narrative</h2>
+            <div class="related-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="related-card-wrapper scale-up">
+                    <app-blog-card-background-aurora>
+                        <div class="narrative-content p-8">
+                            <h3>Secure Transactions</h3>
+                            <p>Learn more about our safety protocols.</p>
+                        </div>
+                    </app-blog-card-background-aurora>
+                </div>
+                <div class="related-card-wrapper scale-up">
+                    <app-blog-card-background>
+                        <div class="narrative-content p-8">
+                            <h3>Mobile Recharge</h3>
+                            <p>The easiest way to top up your mobile.</p>
+                        </div>
+                    </app-blog-card-background>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Action Bar -->
+    <div class="floating-action-bar glass">
+        <div class="bar-content px-8 py-4 flex items-center justify-between">
+            <span class="narrative-hint text-sm opacity-70">Ready to start?</span>
+            <button class="cta-button">Recharge Now</button>
+        </div>
+    </div>
+</main>

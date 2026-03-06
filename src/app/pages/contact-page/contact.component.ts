@@ -4,6 +4,7 @@ import { LucideAngularModule, Mail, Phone, MapPin, Send, MessageSquare, ArrowRig
 import { ParticlesComponent } from '../../components/ui/particles/particles.component';
 import { SuccessModalComponent } from '../../components/ui/success-modal/success-modal.component';
 import { Component, signal } from '@angular/core';
+import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 
 @Component({
   selector: 'app-contact',
@@ -22,14 +23,36 @@ export class ContactComponent {
 
   showSuccessModal = signal(false);
 
-  onSubmit(form: NgForm) {
-    this.showSuccessModal.set(true);
+  async onSubmit(form: NgForm) {
+    // These IDs come from your EmailJS Dashboard
+    const serviceID = 'service_pjbot8i';
+    const templateID = 'template_9vi84vf';
+    const publicKey = 'KaehrgBhnDHJkReZ0';
 
-    // Auto-hide after 3 seconds
-    setTimeout(() => {
-      this.showSuccessModal.set(false);
-      form.resetForm();
-    }, 3000);
+    try {
+      // 2. Map form values to match your EmailJS Template variables
+      const templateParams = {
+        firstName: form.value.firstName,
+        lastName: form.value.lastName,
+        email: form.value.email,
+        // to_email: 'recipient@example.com' // Optional: Use if you set {{to_email}} in dashboard
+      };
+
+      // 3. Send the email
+      await emailjs.send(serviceID, templateID, templateParams, publicKey);
+
+      // Show success UI
+      this.showSuccessModal.set(true);
+
+      setTimeout(() => {
+        this.showSuccessModal.set(false);
+        form.resetForm();
+      }, 3000);
+
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      alert('Failed to send message. Please try again.');
+    }
   }
 
   contactInfo = [

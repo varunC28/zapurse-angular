@@ -1,4 +1,4 @@
-<div class="pt-32 min-h-screen pb-20 bg-transparent transition-colors overflow-hidden relative">
+<div class="pt-40 min-h-screen pb-20 bg-transparent transition-colors overflow-hidden relative">
     <app-particles className="absolute inset-0 z-0" [quantity]="120" [ease]="80" color="#cbd5e1"
         [refresh]="true"></app-particles>
 
@@ -44,12 +44,12 @@
                 </div>
 
                 <div class="p-6 border-t border-gray-50 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-800/50">
-                    <div (click)="openVideoModal(service.videoSrc)"
+                    <a [routerLink]="service.route"
                         class="flex items-center justify-between font-semibold text-gray-700 dark:text-gray-200 hover:text-primary transition-colors group cursor-pointer">
-                        <span>Recharge under 30 seconds, watch video</span>
+                        <span>View details and benefits</span>
                         <lucide-icon [img]="ArrowRight" [size]="18"
                             class="group-hover:translate-x-1 transition-transform"></lucide-icon>
-                    </div>
+                    </a>
                 </div>
             </div>
             }
@@ -93,7 +93,5 @@
         </div>
     </div>
 
-    <!-- Video Modal -->
-    <app-video-modal [videoSrc]="currentVideoSrc" [isOpen]="showVideoModal"
-        (close)="closeVideoModal()"></app-video-modal>
+
 </div>

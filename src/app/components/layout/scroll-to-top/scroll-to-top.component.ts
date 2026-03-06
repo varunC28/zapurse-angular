@@ -3,7 +3,7 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { LucideAngularModule, ChevronUp } from 'lucide-angular';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
-import { SmoothScrollService } from '../../../services/smooth-scroll.service';
+import { SmoothScrollService } from '../smooth-scroll/smooth-scroll.service';
 
 @Component({
   selector: 'app-scroll-to-top',

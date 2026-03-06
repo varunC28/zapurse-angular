@@ -1,4 +1,4 @@
-<div class="h-auto lg:h-[35rem] overflow-y-visible lg:overflow-y-auto no-scrollbar flex flex-col lg:flex-row justify-center relative space-y-10 lg:space-y-0 lg:space-x-10 rounded-md p-6 md:p-10"
+<div class="h-auto lg:h-[35rem] overflow-y-visible lg:overflow-y-auto no-scrollbar flex flex-col lg:flex-row justify-center relative space-y-10 lg:space-y-0 lg:space-x-10 rounded-md md:p-10"
     #scrollContainer [class]="contentClassName" data-lenis-prevent>
 
     <div class="relative flex items-start px-4 w-full lg:w-auto">
@@ -17,7 +17,7 @@
                 <div class="lg:hidden mt-6 w-full h-72 rounded-xl overflow-hidden shadow-lg p-2"
                     [style.background]="linearGradients[index % linearGradients.length]">
                     @if (item.image) {
-                    <img [src]="item.image" [alt]="item.title" class="h-full w-full object-contain" />
+                    <img [src]="item.image" [alt]="item.title" class="h-full w-full border-2 border-white " />
                     } @else {
                     <div class="flex h-full w-full items-center justify-center text-white font-bold text-2xl">
                         {{ item.title }}

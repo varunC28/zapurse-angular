@@ -31,6 +31,8 @@ export class ParticlesComponent implements OnInit, OnDestroy, OnChanges {
   private resizeTimeout: any;
   private mouseMoveHandler: any;
   private resizeHandler: any;
+  private intersectionObserver: IntersectionObserver | null = null;
+  private isVisible = false;
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
 
@@ -42,13 +44,35 @@ export class ParticlesComponent implements OnInit, OnDestroy, OnChanges {
 
       this.resizeHandler = () => this.handleResize();
       window.addEventListener('resize', this.resizeHandler);
+
+      this.setupIntersectionObserver();
+    }
+  }
+
+  private setupIntersectionObserver() {
+    this.intersectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        this.isVisible = entry.isIntersecting;
+        if (this.isVisible) {
+          this.animate();
+        } else {
+          if (this.rafID) {
+            cancelAnimationFrame(this.rafID);
+            this.rafID = null;
+          }
+        }
+      });
+    }, { threshold: 0.1 });
+
+    if (this.canvasContainerRef?.nativeElement) {
+      this.intersectionObserver.observe(this.canvasContainerRef.nativeElement);
     }
   }
 
   ngAfterViewInit() {
     if (isPlatformBrowser(this.platformId)) {
       this.initCanvas();
-      this.animate();
+      // Animation is now triggered by IntersectionObserver
     }
   }
 
@@ -71,6 +95,9 @@ export class ParticlesComponent implements OnInit, OnDestroy, OnChanges {
       }
       window.removeEventListener('mousemove', this.mouseMoveHandler);
       window.removeEventListener('resize', this.resizeHandler);
+      if (this.intersectionObserver) {
+        this.intersectionObserver.disconnect();
+      }
     }
   }
 
@@ -111,6 +138,12 @@ export class ParticlesComponent implements OnInit, OnDestroy, OnChanges {
     this.canvasSize.w = this.canvasContainerRef.nativeElement.offsetWidth;
     this.canvasSize.h = this.canvasContainerRef.nativeElement.offsetHeight;
 
+    // Optimize particle count for mobile
+    let actualQuantity = this.quantity;
+    if (this.canvasSize.w < 768) {
+      actualQuantity = Math.min(this.quantity, 40); // Cap at 40 particles on mobile
+    }
+
     this.canvasRef.nativeElement.width = this.canvasSize.w * this.dpr;
     this.canvasRef.nativeElement.height = this.canvasSize.h * this.dpr;
     this.canvasRef.nativeElement.style.width = `${this.canvasSize.w}px`;
@@ -118,7 +151,7 @@ export class ParticlesComponent implements OnInit, OnDestroy, OnChanges {
     this.context.scale(this.dpr, this.dpr);
 
     this.circles = [];
-    for (let i = 0; i < this.quantity; i++) {
+    for (let i = 0; i < actualQuantity; i++) {
       const circle = this.circleParams();
       this.drawCircle(circle);
     }
@@ -185,6 +218,8 @@ export class ParticlesComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   private animate() {
+    if (!this.isVisible) return;
+
     this.clearContext();
     this.circles.forEach((circle, i) => {
       const edge = [

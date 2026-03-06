@@ -1,0 +1,20 @@
+<app-hero></app-hero>
+<app-why-zapurse></app-why-zapurse>
+
+@defer (on viewport) {
+<app-comparison></app-comparison>
+} @placeholder {
+<div class="h-96 w-full"></div>
+}
+
+@defer (on viewport) {
+<app-services-grid></app-services-grid>
+} @placeholder {
+<div class="h-96 w-full"></div>
+}
+
+@defer (on viewport) {
+<app-partners-and-testimonials></app-partners-and-testimonials>
+} @placeholder {
+<div class="h-96 w-full"></div>
+}
