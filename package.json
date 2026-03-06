@@ -19,7 +19,7 @@
     "@angular/platform-browser-dynamic": "^19.2.0",
     "@angular/router": "^19.2.0",
     "@emailjs/browser": "^4.4.1",
-    "@omnedia/ngx-aurora": "^4.0.1",
+    "@omnedia/ngx-aurora": "^3.0.0",
     "@omnedia/ngx-bento-grid": "^4.0.1",
     "@omnedia/ngx-border-beam": "^4.0.1",
     "@omnedia/ngx-dark-veil": "^4.0.1",
