@@ -42,6 +42,14 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/blog-detail-page/blog-detail-page.component').then(m => m.BlogDetailPageComponent)
     },
     {
+        path: 'mobile-recharge-services',
+        loadComponent: () => import('./pages/mobile-recharge-content-page/mobile-recharge.component').then(m => m.MobileRechargeComponent)
+    },
+    {
+        path: 'dth-recharge-services',
+        loadComponent: () => import('./pages/dth-recharge-content-page/dth-recharge.component').then(m => m.DthRechargeComponent)
+    },
+    {
         path: '**',
         redirectTo: ''
     }

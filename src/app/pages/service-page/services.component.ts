@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LucideAngularModule, Smartphone, Monitor, ArrowRight } from 'lucide-angular';
 import { ParticlesComponent } from '../../components/ui/particles/particles.component';
-import { VideoModalComponent } from '../../components/ui/video-modal/video-modal.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-services',
   standalone: true,
-  imports: [CommonModule, LucideAngularModule, ParticlesComponent, VideoModalComponent],
+  imports: [CommonModule, LucideAngularModule, ParticlesComponent, RouterLink],
   templateUrl: './services.component.html',
   styleUrl: './services.component.css'
 })
@@ -24,7 +24,8 @@ export class ServicesComponent {
       features: ['99.9% uptime', 'Covers all operators', 'Instant confirmation'],
       icon: Smartphone,
       color: 'bg-[#217095]',
-      videoSrc: 'assets/Phone Recharge Video.mp4'
+      videoSrc: 'assets/Phone Recharge Video.mp4',
+      route: '/mobile-recharge-services'
     },
     {
       id: 'dth',
@@ -33,7 +34,8 @@ export class ServicesComponent {
       features: ['All providers supported', 'Instant activation', 'Best commissions'],
       icon: Monitor,
       color: 'bg-[#4ade80]',
-      videoSrc: 'assets/DTH Recharge Video.mp4'
+      videoSrc: 'assets/DTH Recharge Video.mp4',
+      route: '/dth-recharge-services'
     },
   ];
 
