@@ -1,0 +1,165 @@
+<div class="pt-32 min-h-screen pb-20 bg-transparent transition-colors overflow-hidden relative">
+    <app-particles className="absolute inset-0 z-0" [quantity]="120" [ease]="80" color="#cbd5e1"
+        [refresh]="true"></app-particles>
+
+    <div class="container mx-auto px-4 md:px-6 relative z-10">
+        <!-- Back Button -->
+        <a routerLink="/services"
+            class="inline-flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-primary transition-colors mb-8 group">
+            <lucide-icon [img]="ArrowLeft" [size]="20"
+                class="group-hover:-translate-x-1 transition-transform"></lucide-icon>
+            <span>Back to Services</span>
+        </a>
+
+        <!-- Hero Section -->
+        <div class="max-w-4xl mx-auto mb-20 text-center animate-in fade-in slide-in-from-bottom-8 duration-700">
+            <div
+                class="w-20 h-20 rounded-2xl bg-[#4ade80] flex items-center justify-center text-white mx-auto mb-8 shadow-lg shadow-[#4ade80]/20">
+                <lucide-icon [img]="Monitor" [size]="48"></lucide-icon>
+            </div>
+            <h1 class="mb-6">Easy & Secure Recharges with Reliable Online DTH Recharge Service Provider</h1>
+            <p class="text-xl leading-relaxed text-gray-600 dark:text-gray-400">
+                Zapurse offers a simple and dependable way for users to recharge their DTH connections online. Designed
+                for a smooth, secure, and transparent experience without complications or unnecessary costs.
+            </p>
+        </div>
+
+        <!-- Content Sections -->
+        <div class="grid gap-12 max-w-5xl mx-auto">
+
+            <!-- Convenient Platform -->
+            <section
+                class="bg-white/30 dark:bg-gray-900/50 backdrop-blur-xl border border-white/20 dark:border-gray-800 p-8 md:p-12 rounded-[2.5rem] shadow-xl animate-in fade-in slide-in-from-bottom-8 duration-700 delay-100 fill-mode-both">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">Convenient DTH Recharge
+                            Platform for Everyday Use</h2>
+                        <p class="mb-6 leading-relaxed">
+                            Why deal with the confusion of multiple websites and apps? Our dedicated platform combines
+                            everything you need in one location. Choosing a service provider and completing a recharge
+                            takes just minutes—no physical visits required.
+                        </p>
+                        <div class="space-y-4">
+                            <div *ngFor="let benefit of dthBenefits" class="flex items-center gap-3">
+                                <lucide-icon [img]="CheckCircle2" [size]="20" class="text-[#4ade80]"></lucide-icon>
+                                <span class="text-sm font-medium">{{benefit.text}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-gradient-to-br from-[#4ade80]/10 to-[#4ade80]/20 rounded-3xl p-8 aspect-video flex items-center justify-center border border-[#4ade80]/10 relative group overflow-hidden">
+                        <!-- Visual element -->
+                        <lucide-icon [img]="Monitor" [size]="80"
+                            class="text-[#4ade80] group-hover:scale-110 transition-transform duration-500"></lucide-icon>
+                        <div class="absolute bottom-4 left-4 right-4 text-center opacity-40">
+                            <span class="text-[10px] tracking-[0.2em] font-bold uppercase text-[#4ade80]">Seamless
+                                Entertainment</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Honest Pricing and Benefits -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Savings -->
+                <div
+                    class="bg-white/30 dark:bg-gray-900/50 backdrop-blur-xl border border-white/20 dark:border-gray-800 p-8 rounded-[2.5rem] shadow-lg animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200 fill-mode-both">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 flex items-center justify-center mb-6">
+                        <lucide-icon [img]="TrendingUp" [size]="28"></lucide-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Honest Pricing & Benefits</h3>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+                        We follow a clear and honest pricing system. On every DTH recharge, users receive <b>2.5%
+                            savings</b>, helping reduce regular expenses in a practical way.
+                    </p>
+                    <ul class="space-y-3 text-sm font-medium text-gray-700 dark:text-gray-300">
+                        <li class="flex items-center gap-2">No convenience fees</li>
+                        <li class="flex items-center gap-2">No processing fees</li>
+                        <li class="flex items-center gap-2">No hidden charges</li>
+                    </ul>
+                </div>
+
+                <!-- How to Use -->
+                <div
+                    class="bg-white/30 dark:bg-gray-900/50 backdrop-blur-xl border border-white/20 dark:border-gray-800 p-8 rounded-[2.5rem] shadow-lg animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300 fill-mode-both">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 flex items-center justify-center mb-6">
+                        <lucide-icon [img]="Zap" [size]="28"></lucide-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Easy to Use for All</h3>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+                        Designed for users of all age groups and technical backgrounds. All buttons, options, and
+                        instructions are clearly displayed for an effortless experience.
+                    </p>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div *ngFor="let step of usageSteps"
+                            class="p-3 rounded-2xl bg-white/50 dark:bg-gray-800/50 text-[12px] font-bold text-center">
+                            {{step.text}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Security Section -->
+            <section
+                class="bg-white/30 dark:bg-gray-900/50 backdrop-blur-xl border border-white/20 dark:border-gray-800 p-8 md:p-12 rounded-[2.5rem] shadow-xl animate-in fade-in slide-in-from-bottom-8 duration-700 delay-400 fill-mode-both">
+                <div class="flex flex-col md:flex-row gap-12 items-center">
+                    <div class="flex-shrink-0">
+                        <lucide-icon [img]="ShieldCheck" [size]="80" class="text-[#4ade80]"></lucide-icon>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-bold mb-4">Safe and Secure Recharge Environment</h2>
+                        <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+                            Security is our priority. Every transaction is completed via safe and verified payment
+                            gateways with advanced safety systems and routine technical monitoring to protect your
+                            information.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- History Section -->
+            <section
+                class="bg-white/30 dark:bg-gray-900/50 backdrop-blur-xl border border-white/20 dark:border-gray-800 p-8 md:p-12 rounded-[2.5rem] shadow-xl animate-in fade-in slide-in-from-bottom-8 duration-700 delay-500 fill-mode-both text-center">
+                <div
+                    class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 mb-6">
+                    <lucide-icon [img]="History" [size]="32"></lucide-icon>
+                </div>
+                <h2 class="text-3xl font-bold mb-4">Clear Transaction Records</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl mx-auto">
+                    Maintain proper records of your spending. Track recharge expenses, verify completed payments, and
+                    manage your budget better with our detailed transaction history tool.
+                </p>
+            </section>
+
+        </div>
+
+        <!-- Call to Action -->
+        <div
+            class="mt-20 max-w-4xl mx-auto p-10 rounded-[3rem] bg-gradient-to-br from-[#4ade80] to-[#22c55e] text-white shadow-2xl relative overflow-hidden animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-600 fill-mode-both">
+            <div class="absolute -bottom-10 -left-10 p-8 opacity-10">
+                <lucide-icon [img]="Monitor" [size]="250"></lucide-icon>
+            </div>
+            <div class="relative z-10 text-center">
+                <h3 class="text-3xl font-bold mb-6">Uninterrupted Entertainment</h3>
+                <p class="text-xl text-green-50 mb-10 max-w-2xl mx-auto leading-relaxed">
+                    Stay connected without visiting local shops. Recharge your DTH from home, workplace, or even while
+                    traveling.
+                </p>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="https://play.google.com/store/apps/details?id=com.zapurse.zapurse" target="_blank"
+                        class="transition-transform hover:scale-105">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                            alt="Google Play" class="h-16">
+                    </a>
+                    <a href="https://apps.apple.com/in/app/zapurse-recharge/id6751755861" target="_blank"
+                        class="transition-transform hover:scale-105">
+                        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                            alt="App Store" class="h-16">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
