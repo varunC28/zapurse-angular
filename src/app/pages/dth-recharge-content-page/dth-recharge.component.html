@@ -95,73 +95,69 @@
                         instructions are clearly displayed for an effortless experience.
                     </p>
                     <div class="grid grid-cols-2 gap-3">
-                        class="p-3 rounded-2xl bg-white/50 dark:bg-gray-800/50 border border-border text-[12px]
-                        font-bold text-center">
-                        {{step.text}}
+                        <div *ngFor="let step of usageSteps"
+                            class="p-3 rounded-2xl bg-white/50 dark:bg-gray-800/50 border border-border text-[12px] font-bold text-center">
+                            {{step.text}}
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Security Section -->
-        <section
-            class="bg-white/30 dark:bg-gray-900 border p-8 md:p-12 rounded-[2.5rem] shadow-sm hover:shadow-lg transition-all duration-300 animate-in fade-in slide-in-from-bottom-8 delay-400 fill-mode-both">
-            <div class="flex flex-col md:flex-row gap-12 items-center">
-                <div class="flex-shrink-0">
-                    <lucide-icon [img]="ShieldCheck" [size]="80"
-                        class="text-green-600 dark:text-green-400"></lucide-icon>
-                </div>
-                <div>
-                    <h2 class="mb-4">Safe and Secure Recharge Environment</h2>
+            <!-- Security Section and History Section in Grid -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Security Section -->
+                <div
+                    class="bg-white/30 dark:bg-gray-900 border p-8 rounded-[2.5rem] shadow-sm hover:shadow-lg transition-all duration-300 animate-in fade-in slide-in-from-bottom-8 delay-400 fill-mode-both">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-green-500/10 dark:bg-green-500/20 text-green-600 dark:text-green-400 flex items-center justify-center mb-6">
+                        <lucide-icon [img]="ShieldCheck" [size]="28"></lucide-icon>
+                    </div>
+                    <h3 class="mb-4">Safe and Secure Recharge Environment</h3>
                     <p class="mb-6">
                         Security is our priority. Every transaction is completed via safe and verified payment
                         gateways with advanced safety systems and routine technical monitoring to protect your
                         information.
                     </p>
                 </div>
+
+                <!-- History Section -->
+                <div
+                    class="bg-white/30 dark:bg-gray-900 border p-8 rounded-[2.5rem] shadow-sm hover:shadow-lg transition-all duration-300 animate-in fade-in slide-in-from-bottom-8 delay-500 fill-mode-both">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-indigo-500/10 dark:bg-indigo-500/20 text-indigo-600 dark:text-indigo-400 flex items-center justify-center mb-6">
+                        <lucide-icon [img]="History" [size]="28"></lucide-icon>
+                    </div>
+                    <h3 class="mb-4">Clear Transaction Records</h3>
+                    <p class="mb-6">
+                        Maintain proper records of your spending. Track recharge expenses, verify completed payments,
+                        and
+                        manage your budget better.
+                    </p>
+                </div>
             </div>
-        </section>
 
-        <!-- History Section -->
-        <section
-            class="bg-white/30 dark:bg-gray-900 border p-8 md:p-12 rounded-[2.5rem] shadow-sm hover:shadow-lg transition-all duration-300 animate-in fade-in slide-in-from-bottom-8 delay-500 fill-mode-both text-center">
-            <div
-                class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 mb-6">
-                <lucide-icon [img]="History" [size]="32"></lucide-icon>
-            </div>
-            <h2 class="mb-4">Clear Transaction Records</h2>
-            <p class="max-w-2xl mx-auto mb-6">
-                Maintain proper records of your spending. Track recharge expenses, verify completed payments, and
-                manage your budget better with our detailed transaction history tool.
-            </p>
-        </section>
-
-    </div>
-
-    <div
-        class="mt-20 max-w-4xl mx-auto p-10 rounded-[3rem] bg-white/30 dark:bg-gray-900 border shadow-sm hover:shadow-lg transition-all duration-500 relative overflow-hidden animate-in fade-in slide-in-from-bottom-12 delay-600 fill-mode-both">
-        <div class="absolute -bottom-10 -left-10 p-8 opacity-5 dark:opacity-10 text-green-600 dark:text-green-400">
-            <lucide-icon [img]="Monitor" [size]="250"></lucide-icon>
         </div>
-        <div class="relative z-10 text-center">
-            <h3 class="mb-6 font-black">Uninterrupted Entertainment</h3>
-            <p class="mb-10 max-w-2xl mx-auto">
-                Stay connected without visiting local shops. Recharge your DTH from home, workplace, or even while
-                traveling.
-            </p>
-            <div class="flex flex-wrap justify-center gap-6">
-                <a href="https://play.google.com/store/apps/details?id=com.zapurse.zapurse" target="_blank"
-                    class="transition-transform hover:scale-105">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-                        alt="Google Play" class="h-16">
-                </a>
-                <a href="https://apps.apple.com/in/app/zapurse-recharge/id6751755861" target="_blank"
-                    class="transition-transform hover:scale-105">
-                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
-                        alt="App Store" class="h-16">
-                </a>
+
+        <div
+            class="mt-20 max-w-4xl mx-auto p-10 rounded-[3rem] bg-white/30 dark:bg-gray-900 border shadow-sm hover:shadow-lg transition-all duration-500 relative overflow-hidden animate-in fade-in slide-in-from-bottom-12 delay-600 fill-mode-both">
+            <div class="relative z-10 text-center">
+                <h3 class="mb-6 font-black">Uninterrupted Entertainment</h3>
+                <p class="mb-10 max-w-2xl mx-auto">
+                    Stay connected without visiting local shops. Recharge your DTH from home, workplace, or even while
+                    traveling.
+                </p>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="https://play.google.com/store/apps/details?id=com.zapurse.zapurse" target="_blank"
+                        class="transition-transform hover:scale-105">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                            alt="Google Play" class="h-16">
+                    </a>
+                    <a href="https://apps.apple.com/in/app/zapurse-recharge/id6751755861" target="_blank"
+                        class="transition-transform hover:scale-105">
+                        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                            alt="App Store" class="h-16">
+                    </a>
+                </div>
             </div>
         </div>
     </div>
-</div>
-</div>
