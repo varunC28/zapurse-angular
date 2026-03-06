@@ -27,7 +27,7 @@ interface NavLink {
     RouterLink,
     RouterLinkActive,
     LucideAngularModule,
-    ThemeToggleComponent, PageBackgroundComponent
+    ThemeToggleComponent
   ],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
