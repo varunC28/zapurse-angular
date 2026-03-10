@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Title, Meta } from '@angular/platform-browser';
 import { LucideAngularModule, Smartphone, Monitor, ArrowRight } from 'lucide-angular';
 import { ParticlesComponent } from '../../components/ui/particles/particles.component';
 import { RouterLink } from '@angular/router';
@@ -14,6 +15,12 @@ import { RouterLink } from '@angular/router';
 export class ServicesComponent {
   readonly ArrowRight = ArrowRight;
   showVideoModal = false;
+
+  constructor(private title: Title, private meta: Meta) {
+    this.title.setTitle('Instant Mobile Recharge Online | All DTH Recharge for Online');
+    this.meta.updateTag({ name: 'description', content: 'Zapurse makes instant mobile recharge online and all DTH recharge for online simple and reliable. Enjoy quick transactions, secure payments without any extra fees or complicated steps.' });
+    this.meta.updateTag({ name: 'keywords', content: 'Instant Mobile Recharge Online, All DTH Recharge for Online' });
+  }
   currentVideoSrc = '';
 
   services = [

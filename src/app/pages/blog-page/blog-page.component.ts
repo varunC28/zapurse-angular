@@ -1,18 +1,22 @@
-import { Component, OnDestroy, inject, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, OnDestroy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgxBentoGridComponent, NgxBentoItemComponent } from '@omnedia/ngx-bento-grid';
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
+import { Title, Meta } from '@angular/platform-browser';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { BlogCardBackgroundComponent } from '../../components/ui/blog-card-background/blog-card-background.component';
-import { BlogCardBackgroundAuroraComponent } from '../../components/ui/blog-card-background-aurora/blog-card-background-aurora.component';
-import { RouterModule } from '@angular/router';
 import { ParticlesComponent } from '../../components/ui/particles/particles.component';
+import { BlogCardComponent } from '../../components/ui/blog-card/blog-card.component';
+import { BLOG_POSTS } from '../../data/blog-content.data';
+import { BlogPost } from '../../../models/blog-post.model';
+
 @Component({
   selector: 'app-blog-page',
   standalone: true,
-  imports: [CommonModule, RouterModule, NgxBentoGridComponent, NgxBentoItemComponent, BlogCardBackgroundComponent, BlogCardBackgroundAuroraComponent, ParticlesComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  imports: [
+    CommonModule,
+    ParticlesComponent,
+    BlogCardComponent,
+  ],
   templateUrl: './blog-page.component.html',
   styleUrl: './blog-page.component.css'
 })
@@ -20,22 +24,34 @@ export class BlogPageComponent implements OnDestroy {
   private breakpointObserver = inject(BreakpointObserver);
   private destroy$ = new Subject<void>();
 
-  columns = 4;
-  colPattern = [1, 2, 1];
+  readonly posts: BlogPost[] = BLOG_POSTS;
 
-  constructor() {
+  columns = 4;
+  colPattern = [1, 2, 1, 1];
+
+  constructor(private title: Title, private meta: Meta) {
+    this.title.setTitle('Zapurse Blog | News, Guides & Updates');
+    this.meta.updateTag({
+      name: 'description',
+      content: 'Read the Zapurse blog for fintech insights, recharge guides, product updates, and tips for saving on mobile and DTH recharges.'
+    });
+    this.meta.updateTag({
+      name: 'keywords',
+      content: 'Zapurse blog, fintech blog, mobile recharge tips, DTH recharge tips, recharge offers, digital payments'
+    });
+
     this.breakpointObserver
       .observe(['(max-width: 800px)'])
       .pipe(takeUntil(this.destroy$))
       .subscribe((result: BreakpointState) => {
-        if (result.matches) {
-          this.columns = 1;
-          this.colPattern = [1];
-        } else {
-          this.columns = 4;
-          this.colPattern = [1, 2, 1, 1];
-        }
+        this.columns = result.matches ? 1 : 4;
+        this.colPattern = result.matches ? [1] : [1, 2, 1, 1];
       });
+  }
+
+  getColSpan(index: number): string {
+    const span = this.colPattern[index % this.colPattern.length] ?? 1;
+    return span > 1 ? `span ${span}` : 'auto';
   }
 
   ngOnDestroy() {
