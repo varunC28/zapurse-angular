@@ -13,6 +13,7 @@ export const BLOG_POSTS: BlogPost[] = [
     cardExcerpt: 'An easy way to keep TV services active. Learn simple steps and benefits for quick DTH recharge online.',
     title: 'Online DTH Recharge in India: An Easy Way to Keep TV Services Active',
     subtitle: 'Online DTH Recharge: A Convenient Way to Recharge Your TV Subscription',
+    // Blog 1
     sections: [
       {
         paragraphs: [
@@ -67,7 +68,142 @@ export const BLOG_POSTS: BlogPost[] = [
       // ... more sections
     ]
   },
+  // Blog 2
   {
+  slug: 'all-dth-recharge-online',
+  metaTitle: 'All DTH Recharge Online – Zapurse',
+  metaDescription: 'Recharge your DTH connection online in minutes. Learn how all DTH recharge online works and enjoy a quick, simple and convenient way to keep your TV active.',
+  metaKeywords: 'All DTH Recharge Online',
+  heroImage: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=2070&auto=format&fit=crop',
+  heroAlt: 'All DTH Recharge Online',
+  cardStyle: 'default',
+  cardTitle: 'All DTH Recharge Online',
+  cardExcerpt: 'Never miss your favourite show again. Learn how all DTH recharge online lets you renew your TV connection in minutes without leaving home.',
+  title: 'All DTH Recharge Online Without Visiting a Recharge Shop',
+  subtitle: 'All DTH Recharge Online: The Easy Way to Recharge Your TV Connection',
+  sections: [
+    {
+      paragraphs: [
+        'For many families, television continues to be a major source of entertainment. Whether it\'s keeping up with the latest news each morning or enjoying an evening of movies or sporting events a working DTH connection matters most.',
+        'But there\'s one small problem that almost everyone has faced at some point the subscription suddenly expires. The channels stop, and the screen shows a recharge message.',
+        'Earlier, the only option was to step out and find a nearby recharge shop. Today things are much simpler. With all DTH recharge online, users can renew their connection within minutes without leaving home. All it usually takes is a phone, an internet connection and just few quick steps.'
+      ]
+    },
+    {
+      heading: 'When the TV Stops in the Middle of a Show',
+      paragraphs: [
+        'It happens more frequently than you may think — you could be watching a cricket game or your favourite TV show, when you suddenly get a message on your screen saying that your subscription has ended.',
+        'This can be sometimes frustrating, especially if it occurred later at night and at that time nearby recharge shops are not open.',
+        'With the option to recharge your DTH subscription online, you will never miss out on another good match or interesting episode. You will be able to recharge when you want, instead of having to wait for the shop to open again. When your payment has been processed, your channels will start working again. That\'s one of the biggest reasons why many people now prefer online recharge services.'
+      ]
+    },
+    {
+      heading: 'A Recharge Process That Takes Only a Few Minutes',
+      paragraphs: [
+        'The main reason for online recharge has become popular is because the process is quite simple. Most of the platforms follow a similar pattern. Users just required to enter their DTH customer ID or registered mobile number, select the service provider and choose a recharge plan.',
+        'After that, the payment can be completed through digital payment options. Once the transaction is confirmed, the recharge is processed and the connection continues. Because these steps are simple & straightforward, even people who are new to online payments can complete the process without facing much difficulty.'
+      ]
+    },
+    {
+      heading: 'No Need to Search for a Recharge Shop',
+      paragraphs: [
+        'Not long ago, recharging a DTH connection meant visiting a small recharge shop or a mobile store nearby. While that worked, it wasn\'t always convenient. Sometimes the shop was closed, sometimes there was a queue, and sometimes the recharge had to wait until the next day.',
+        'Online recharge removes that extra effort. Users can complete recharge online from anywhere whether they are at home, at work or even travelling. This flexibility is one of the main reasons why digital recharge platforms are becoming more common.'
+      ]
+    },
+    {
+      heading: 'A Practical Option for Busy Schedules',
+      paragraphs: [
+        'For many people daily routines becoming busier in between work, travel and family responsibilities, small tasks like recharging a DTH connection sometimes can be neglected due to work.',
+        'Online recharge platforms make this task quick and manageable in between daily routine. Instead of planning a visit to a recharge shop manually, the payment can be completed from mobile phone or computer within a few minutes whenever convenient. Because of this ease, many households now believe on recharge online to keep their television services running without interruption.'
+      ]
+    },
+    {
+      heading: 'Choosing a Reliable Recharge Platform',
+      paragraphs: [
+        'Recharge online can be really convenient, but it\'s important to find an online recharge service which is both easy to use and trustworthy. A good online recharge service will have a clear outline of what plans are available and will provide a smooth process so customers do not get confused when making a payment.',
+        'Users generally look for platforms that provide secure payment options and a smooth experience from start to finish. Zapurse aim to provide a straightforward way for users to complete all DTH recharge online without unnecessary complications.'
+      ]
+    },
+    {
+      heading: 'A More Convenient Way to Manage Your DTH Subscription',
+      paragraphs: [
+        'Technology has changed the way we do many things in our daily lives, such as getting DTH recharged. A task that before required physically visiting a retailer can now be possible from the convenience of your mobile phone and in only few minutes.',
+        'DTH recharges online offers users a fast and easy solution to maintaining an active cable or satellite TV connection. With quick payments and easy access, managing DTH subscriptions has become much more comfortable than before.'
+      ]
+    }
+  ]
+},
+  // Blog 3
+{
+  slug: 'online-mobile-and-dth-recharge',
+  metaTitle: 'Online Mobile and DTH Recharge – Zapurse',
+  metaDescription: 'Looking for an easier way to recharge? Online mobile and DTH recharge services by Zapurse helps users complete recharges anytime with a quick and convenient digital process.',
+  metaKeywords: 'Online Mobile and DTH Recharge',
+  heroImage: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=2070&auto=format&fit=crop',
+  heroAlt: 'Online Mobile and DTH Recharge',
+  cardStyle: 'aurora',
+  cardTitle: 'Online Mobile and DTH Recharge',
+  cardExcerpt: 'A quick and convenient way to manage your everyday payments. Learn how online mobile and DTH recharge simplifies recharges anytime, anywhere.',
+  title: 'Online Mobile and DTH Recharge: Quick Recharge with Zapurse',
+  subtitle: 'Online Mobile and DTH Recharge: A Simple Way to Manage Your Everyday Payments',
+  sections: [
+    {
+      paragraphs: [
+        'Mobile phones and television services are used in almost every household today. Whether it is staying connected with family or watching favorite TV channels, both services require regular recharge. Because of this, many people now prefer online mobile and DTH recharge instead of visiting nearby shops for recharge.',
+        'Online recharge platforms allow users to complete their payments quickly with secure transactions through a smartphone or computer. The whole process usually required a few minutes and helps users avoid unnecessary travel or waiting time at local stores. For people who handle multiple recharges every month, online platforms offer a simpler way to manage these payments.'
+      ]
+    },
+    {
+      heading: 'Why Online Recharge is Becoming the First Choice',
+      paragraphs: [
+        'Earlier, mobile and DTH recharges were mostly done through local retailers. While that system worked for many years, it often required people to visit a shop during specific hours.',
+        'With the growth of internet access and smartphones, online recharge services have become more common. Today, users can recharge their mobile numbers or DTH connections anytime, anywhere during the day or night without limited to business hours.',
+        'This flexibility is one of the biggest reasons why online mobile and DTH recharge is becoming the preferred option for many households across India.'
+      ]
+    },
+    {
+      heading: 'One Platform for Two Essential Services',
+      paragraphs: [
+        'A major advantage of digital recharge platforms is that they allow users to manage multiple services in one place. Instead of using separate methods for mobile recharge and television recharge, both tasks can be completed through a single platform.',
+        'This is particularly useful for families that manage several mobile numbers along with a DTH subscription. Online platforms allow users to quickly select the required service and complete the recharge within minutes.',
+        'By bringing these services together, mobile and DTH recharge platforms make regular payments much easier to manage.'
+      ]
+    },
+    {
+      heading: 'How the Recharge Process Works',
+      paragraphs: [
+        'Online recharge systems are developed to be easy & simple so that users can complete the recharge process without any confusion. Mostly, platforms are following a simple structure that guides users step by step.',
+        'The recharge process usually includes: entering the mobile number or DTH subscriber ID; selecting the service provider; choosing the recharge plan; completing the payment through a secure method.',
+        'After the payment is confirmed, the recharge is processed and users receive confirmation. Because the process is fast and straightforward, many people now believe on online recharge for their routine payments.'
+      ]
+    },
+    {
+      heading: 'Advantages of Using Online Recharge Platforms',
+      paragraphs: [
+        'Digital recharge services offer various benefits that make them suitable for everyday users. These platforms help reduce the time and effort required to complete regular recharges.',
+        'Some of the common advantages include: ability to recharge anytime from home; no need to visit local recharge stores; quick and secure payment options; instant confirmation after payment; easy access to available recharge plans.',
+        'These benefits make online recharge a practical option for users who want a smooth and reliable payment experience.'
+      ]
+    },
+    {
+      heading: 'Choosing the Right Platform for Recharge',
+      paragraphs: [
+        'With various digital payment platforms available today, users should select a recharge service that is reliable and easy to use. A good platform should provide secure payment methods, quick processing and clear pricing with no hidden extra charge.',
+        'It is also helpful when the platform provides a simple interface so users can complete their transactions without confusion. Reliable recharge platforms focus on providing a smooth experience for users who depend on digital services for their everyday payments.'
+      ]
+    },
+    {
+      heading: 'Digital Recharge Is Becoming a Daily Convenience',
+      paragraphs: [
+        'As digital services continue to grow in India, online recharge methods are becoming part of everyday routines. They allow users to manage essential services like mobile connectivity and television subscriptions without leaving home.',
+        'For many households, online mobile and DTH recharge services provides a quick and convenient way to keep these services active. With easy access and fast transactions, digital recharge platforms are helping simplify the way people handle their regular payments.'
+      ]
+    }
+  ]
+},
+// Blog 4
+{
     slug: 'zero-fees',
     metaTitle: 'Zero Fees – Zapurse',
     metaDescription: 'Why Zapurse chooses transparency over convenience fees.',
@@ -105,6 +241,7 @@ export const BLOG_POSTS: BlogPost[] = [
       }
     ]
   }
+
   // ← ADD NEW POSTS HERE. Nothing else needs to change.
 ];
 
