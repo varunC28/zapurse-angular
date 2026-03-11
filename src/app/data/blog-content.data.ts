@@ -240,7 +240,114 @@ export const BLOG_POSTS: BlogPost[] = [
         ]
       }
     ]
-  }
+  },
+  // Blog 4
+{
+  slug: 'online-dth-recharge-offers',
+  metaTitle: 'Online DTH Recharge Offers – Zapurse',
+  metaDescription: 'Explore online DTH recharge offers and learn how users can recharge their DTH connection easily with Zapurse while saving money through simple online recharge options.',
+  metaKeywords: 'Online DTH Recharge Offers',
+  heroImage: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=2070&auto=format&fit=crop',
+  heroAlt: 'Online DTH Recharge Offers',
+  cardStyle: 'aurora',
+  cardTitle: 'Online DTH Recharge Offers',
+  cardExcerpt: 'Save on regular TV recharges. Discover how online DTH recharge offers help households across India recharge smarter and spend less.',
+  title: 'Make TV Recharge Simple, Fast & Affordable with Online DTH Recharge Offers',
+  subtitle: 'Online DTH Recharge Offers - Save on Regular TV Recharges',
+  sections: [
+    {
+      paragraphs: [
+        'TV watching is a regular activity for most households in India on a daily basis. In the mornings, families usually watch news and or current events and in the evening they view either their favourite serials, movies or cricket on DTH TV. Consequently, maintaining an active connection through timely recharges is key to providing continuity of service and access to daily entertainment.',
+        'For years, the usual way to recharge a DTH connection was by visiting a nearby retailer or recharge shop. It worked, but it was not always convenient way. People had to step out, find an open shop and sometimes wait for the shopkeeper to complete the recharge.',
+        'Today, things are much easier. With internet access available on user\'s smartphones, they can recharge their DTH connection online in just a few minutes. Along with convenience, many platforms also provide online DTH recharge offers, allowing users to save a little money on every recharge.'
+      ]
+    },
+    {
+      heading: 'Why Many Users Are Moving Away from Shop Recharges',
+      paragraphs: [
+        'Depending on a local recharge shop may seem simple, but it often creates small difficulties. The biggest issue is availability. Recharge shops do not always stay open all day, and if your DTH plan expires late in the evening, you may have to wait until the next day.',
+        'Travel is another factor. In smaller towns or villages, sometimes the nearest recharge shop may not be within walking distance. Users often need to spend time and effort just to complete a small recharge.',
+        'There are also situations where people pay a little extra as a service charge for the recharge. Individually these charges may look small, but over time they increase the total cost of maintaining the DTH connection.',
+        'Because of these reasons, many users are gradually shifting to online recharge options.'
+      ]
+    },
+    {
+      heading: 'Online Recharge Makes the Process Much Easier',
+      paragraphs: [
+        'Online recharge platforms have simplified the entire process. Instead of visiting a shop, users can recharge their DTH connection directly from their phone or computer.',
+        'The steps are simple. Enter the subscriber ID, choose the recharge amount or plan and complete the payment. Once the transaction is successful, the recharge usually happens almost instantly.',
+        'Zapurse make this process easy for users who want a straightforward way to recharge their DTH connection without complications. The platform is designed to keep the process simple so users can complete their recharge without confusion.'
+      ]
+    },
+    {
+      heading: 'Small Savings with Online DTH Recharge Offers',
+      paragraphs: [
+        'One reason many users prefer online recharge is the availability of online DTH recharge offers. These offers help users save a small amount every time they recharge their connection.',
+        'While the saving on a single recharge may not look very large, it becomes meaningful over time. Most households recharge their DTH connection regularly, so even a small benefit on every recharge can reduce overall expenses.',
+        'With Zapurse, users can recharge their DTH connection online and receive a benefit on each recharge transaction. This makes the process not only convenient but also slightly more economical.'
+      ]
+    },
+    {
+      heading: 'Helpful for Users in Smaller Towns and Rural Areas',
+      paragraphs: [
+        'Recharge services via the internet can be very helpful to those who live in small cities and rural areas. While there may be some recharge locations in their town, many people will have to drive quite a long distance to get a recharge.',
+        'With online recharge platforms, this dependency is eliminated. Users can recharge their DTH connection anytime without worrying about physical shop timings or location. As long as there is internet access, the recharge can be completed within minutes.',
+        'This flexibility saves time and effort while ensuring that television services continue without any interruption.'
+      ]
+    },
+    {
+      heading: 'A Practical Way to Manage Your DTH Recharges',
+      paragraphs: [
+        'Recharging a DTH connection is a regular activity for most households. Choosing a simple and reliable method makes this routine task easier.',
+        'With the help of recharge platforms that allow customers to recharge their mobile devices, no need to go to a store or site for assistance. Save time by combining your online recharge with a DTH recharge and get extra savings while doing so.',
+        'Instead of stepping out every time the plan expires, users can now recharge their DTH connection from home and continue enjoying their favourite TV channels without any hassle.'
+      ]
+    }
+  ]
+},
+
+// Blog 5
+{
+  slug: 'online-dth-recharge',
+  metaTitle: 'Online DTH Recharge – Zapurse',
+  metaDescription: 'Online DTH Recharge made simple with Zapurse. Recharge your DTH instantly and save up to 2.5% on every transaction. A convenient option for users across with no extra charges.',
+  metaKeywords: 'Online DTH Recharge',
+  heroImage: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=2070&auto=format&fit=crop',
+  heroAlt: 'Online DTH Recharge',
+  cardStyle: 'default',
+  cardTitle: 'Online DTH Recharge',
+  cardExcerpt: 'A simple solution for monthly TV recharges. See how Zapurse helps users save up to 2.5% on every DTH recharge with no extra charges.',
+  title: 'Online DTH Recharge: A Simple Solution for Monthly TV Recharges',
+  subtitle: 'Online DTH Recharge: A Simple Way Families Are Managing Their TV Recharges Today',
+  sections: [
+    {
+      paragraphs: [
+        'Occasionally there is an unexpected requirement for DTH to be recharged. A person enters the subscriber ID on their TV screen and sees that the validity period has expired, before this was accomplished by going to a local shop and activating the plan, but now if the shop is closed, they will need to wait for the recharge until the shop opens.',
+        'Today the situation is simpler because online DTH recharge allows users to renew their plans directly through their phone. Instead of believing on a physical recharge point, the user can enter the DTH details online, select the required plan and complete the payment within minutes. Once the transaction is confirmed, the connection usually becomes active again without delay.',
+        'For many people, this small change has removed the need to keep track of shop timings or travel to the market for a basic recharge. When the plan expires, the solution is already available on the same mobile device that most users carry every day.'
+      ]
+    },
+    {
+      paragraphs: [
+        'Another reason why online DTH recharge is becoming common is the control it gives to the user. Instead of asking a retailer about available plans, users can view recharge options directly and choose the amount that matches their requirement. This makes the process clearer and avoids confusion about pack prices or plan validity.',
+        'The shift is also visible in smaller towns and rural areas. Mobile internet has made digital services accessible in places where recharge shops were once the only option. With online recharge platforms, users no longer need to depend entirely on local vendors. A recharge can be completed from home without waiting in line or travelling to another location.',
+        'Many users also pay attention to the cost of regular recharges. Since DTH plans are renewed frequently, even a small difference in price can matter over time. Digital platforms sometimes provide small savings on these payments, which makes online recharge slightly more economical than traditional methods.'
+      ]
+    },
+    {
+      paragraphs: [
+        'Zapurse is becoming useful for everyday payments. When users perform DTH recharge through Zapurse, they can receive around 2.5% savings on the recharge amount. The process is straightforward and does not include additional charges, which keeps the payment simple for regular users.',
+        'While individual recharges may seem like a small amount, when performed repeatedly on a monthly basis they start to become significant savings. Users who like to do online payments on their devices will find the convenience of being able to perform online recharges from their device with the small savings to be an appealing option.'
+      ]
+    },
+    {
+      paragraphs: [
+        'Over time, the way people manage routine payments has gradually shifted toward digital platforms. Tasks that once required visiting a shop are now handled within a few minutes through a mobile device. DTH recharge by online is one example of how these everyday activities are becoming easier to manage.',
+        'Zapurse is contributing to this change by offering a simple method for completing recharges while helping users save a small amount on every transaction. For many users across India, this approach has turned DTH recharge into a quick and straightforward digital payment rather than a task that requires stepping out.'
+      ]
+    }
+  ]
+}
 
   // ← ADD NEW POSTS HERE. Nothing else needs to change.
 ];
