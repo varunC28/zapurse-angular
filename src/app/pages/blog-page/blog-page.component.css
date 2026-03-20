@@ -1,10 +1,20 @@
-/* 1. Global Bento Grid Overrides */
-:host ::ng-deep .om-bento-item {
-    padding: 0 !important;
+/* 1. Blog Grid Layout */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+    gap: 1rem;
+    grid-auto-rows: 22rem;
 }
 
-:host ::ng-deep .om-bento-foreground {
-    display: none !important;
+.blog-grid-item {
+    min-height: 0;
+    overflow: hidden;
+    border-radius: 0.75rem;
+}
+
+.blog-grid-item app-blog-card {
+    display: block;
+    height: 100%;
 }
 
 /* 2. Blog Card Content Wrapper */

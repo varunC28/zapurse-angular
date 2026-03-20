@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms';
+import { Title, Meta } from '@angular/platform-browser';
 import { LucideAngularModule, Mail, Phone, MapPin, Send, MessageSquare, ArrowRight } from 'lucide-angular';
 import { ParticlesComponent } from '../../components/ui/particles/particles.component';
 import { SuccessModalComponent } from '../../components/ui/success-modal/success-modal.component';
@@ -22,6 +23,12 @@ export class ContactComponent {
   readonly ArrowRight = ArrowRight;
 
   showSuccessModal = signal(false);
+
+  constructor(private title: Title, private meta: Meta) {
+    this.title.setTitle('Contact Us | Zapurse – Mobile & DTH Recharge');
+    this.meta.updateTag({ name: 'description', content: 'Contact Zapurse for mobile recharge and DTH recharge support. Get in touch with our team for prepaid mobile recharge online and DTH recharge online queries. Head office in Bhopal.' });
+    this.meta.updateTag({ name: 'keywords', content: 'Zapurse contact, mobile recharge support, DTH recharge support, recharge customer care' });
+  }
 
   async onSubmit(form: NgForm) {
     // These IDs come from your EmailJS Dashboard
