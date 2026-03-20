@@ -13,11 +13,12 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
 import { BlogPost } from '../../../models/blog-post.model';
 import { BLOG_CONTENT } from '../../data/blog-content.data';
+import { AuthorCardComponent } from '../../components/author-card/author-card.component';
 
 @Component({
   selector: 'app-blog-detail-page',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, AuthorCardComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './blog-detail-page.component.html',
   styleUrl: './blog-detail-page.component.css'
@@ -46,7 +47,7 @@ export class BlogDetailPageComponent implements OnInit, AfterViewInit, OnDestroy
       this.post = found;
       this.title.setTitle(found.metaTitle);
       this.meta.updateTag({ name: 'description', content: found.metaDescription });
-      this.meta.updateTag({ name: 'keywords',    content: found.metaKeywords });
+      this.meta.updateTag({ name: 'keywords', content: found.metaKeywords });
     } else {
       this.notFound = true;
     }
@@ -106,9 +107,9 @@ export class BlogDetailPageComponent implements OnInit, AfterViewInit, OnDestroy
         scrollTrigger: { trigger: section, start: 'top 80%', toggleActions: 'play none none none' }
       });
       const h2 = section.querySelector('h2');
-      const p  = section.querySelector('p');
+      const p = section.querySelector('p');
       if (h2) tl.from(h2, { y: 30, opacity: 0, duration: 0.6, ease: 'power2.out' });
-      if (p)  tl.from(p,  { y: 20, opacity: 0, duration: 0.6, ease: 'power2.out' }, '-=0.4');
+      if (p) tl.from(p, { y: 20, opacity: 0, duration: 0.6, ease: 'power2.out' }, '-=0.4');
     });
   }
 }

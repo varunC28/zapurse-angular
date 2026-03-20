@@ -26,8 +26,8 @@ export class BlogPageComponent implements OnDestroy {
 
   readonly posts: BlogPost[] = BLOG_POSTS;
 
-  columns = 4;
-  colPattern = [1, 2, 1, 1];
+  columns = 5;
+  colPattern = [1, 2, 1, 1, 2];
 
   constructor(private title: Title, private meta: Meta) {
     this.title.setTitle('Zapurse Blog | News, Guides & Updates');
@@ -44,8 +44,8 @@ export class BlogPageComponent implements OnDestroy {
       .observe(['(max-width: 800px)'])
       .pipe(takeUntil(this.destroy$))
       .subscribe((result: BreakpointState) => {
-        this.columns = result.matches ? 1 : 4;
-        this.colPattern = result.matches ? [1] : [1, 2, 1, 1];
+        this.columns = result.matches ? 1 : 5;
+        this.colPattern = result.matches ? [1] : [1, 2, 1, 1, 2];
       });
   }
 

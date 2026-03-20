@@ -29,7 +29,7 @@ export class AboutComponent {
   }
 
   stats = [
-    { label: "Trusted by Customers", value: 1000, suffix: "+" },
+    { label: "Trusted by Customers", value: 5000, suffix: "+" },
     { label: "States Covered", value: 22, suffix: "+" },
     { label: "Monthly Transactions", value: 3500, suffix: "+" }, // Note: Ticker handles numbers, suffix is separate
     { label: "Trusted Operators", value: 20, suffix: "+" },

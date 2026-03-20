@@ -3,44 +3,50 @@
   <!-- ── Post found ─────────────────────────────────────────────── -->
   @if (post; as p) {
 
-    <section class="hero-section split-screen">
-      <div class="hero-image">
-        <div class="image-wrapper">
-          <div class="hero-vignette"></div>
-          <img [src]="p.heroImage" [alt]="p.heroAlt">
-        </div>
+  <section class="hero-section split-screen">
+    <div class="hero-image">
+      <div class="image-wrapper">
+        <div class="hero-vignette"></div>
+        <img [src]="p.heroImage" [alt]="p.heroAlt">
       </div>
-      <div class="hero-content">
-        <h1 class="soft-rise heading-gradient">{{ p.title }}</h1>
-        <p class="soft-rise">{{ p.subtitle }}</p>
-      </div>
-    </section>
+    </div>
+    <div class="hero-content">
+      <h1 class="soft-rise heading-gradient">{{ p.title }}</h1>
+      <p class="soft-rise">{{ p.subtitle }}</p>
+    </div>
+  </section>
 
-    @for (section of p.sections; track $index) {
-      <section class="narrative-section">
-        <div class="container mx-auto px-4 max-w-5xl">
-          <div class="text-block" [class.ml-auto]="$index % 2 === 1">
-            @if (section.heading) {
-              <h2 class="stagger heading-gradient">{{ section.heading }}</h2>
-            }
-            @for (para of section.paragraphs; track $index) {
-              <p class="stagger">{{ para }}</p>
-            }
-          </div>
-        </div>
-      </section>
-    }
+  @for (section of p.sections; track $index) {
+  <section class="narrative-section">
+    <div class="container mx-auto px-4 max-w-5xl">
+      <div class="text-block" [class.ml-auto]="$index % 2 === 1">
+        @if (section.heading) {
+        <h2 class="stagger heading-gradient">{{ section.heading }}</h2>
+        }
+        @for (para of section.paragraphs; track $index) {
+        <p class="stagger">{{ para }}</p>
+        }
+      </div>
+    </div>
+  </section>
+  }
+
+  <section class="narrative-section !min-h-0 pt-0">
+    <div class="container mx-auto px-4 max-w-5xl">
+      <app-author-card></app-author-card>
+    </div>
+  </section>
 
   <!-- ── 404 fallback ───────────────────────────────────────────── -->
   } @else if (notFound) {
 
-    <section class="narrative-section">
-      <div class="container mx-auto px-4 max-w-4xl text-center">
-        <h1 class="heading-gradient">Post not found</h1>
-        <p>The article you're looking for doesn't exist yet.</p>
-        <a routerLink="/blog" class="mt-6 inline-block underline">← Back to Blog</a>
-      </div>
-    </section>
+  <section class="narrative-section">
+    <div class="container mx-auto px-4 max-w-4xl text-center">
+      <h1 class="heading-gradient">Post not found</h1>
+      <p>The article you're looking for doesn't exist yet.</p>
+      <a routerLink="/blog" class="mt-6 inline-block underline">← Back to Blog</a>
+    </div>
+  </section>
 
   }
 

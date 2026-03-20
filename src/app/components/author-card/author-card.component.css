@@ -1,0 +1,52 @@
+.author-card-wrapper {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+}
+
+.author-card-content {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid hsl(var(--border) / 0.5);
+    border-radius: 1.25rem;
+    padding: 2rem;
+    box-shadow: 0 18px 45px rgba(2, 6, 23, 0.10);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+:host-context(html.dark) .author-card-content {
+    background: rgba(2, 6, 23, 0.55);
+    box-shadow: 0 20px 55px rgba(0, 0, 0, 0.45);
+}
+
+.author-card-content:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 25px 55px rgba(2, 6, 23, 0.15);
+}
+
+.author-name {
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    /* Reuse heading-gradient style if possible, or define here */
+    background-image: linear-gradient(to right, #080F4A, #182B0C);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+:host-context(html.dark) .author-name {
+    background-image: linear-gradient(to right, #ffffff, #10b981);
+}
+
+.author-bio {
+    opacity: 0.9;
+    color: hsl(var(--foreground));
+}
+
+@media (max-width: 768px) {
+    .author-card-content {
+        padding: 1.5rem;
+    }
+}
